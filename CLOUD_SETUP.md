@@ -31,7 +31,7 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-For a Cloud/network preview, start Vite with `pnpm dev -- --host 0.0.0.0`. Use the environment's forwarded preview URL; laptop localhost URLs do not transfer to the desktop. Static production files can be regenerated with `pnpm build`.
+For a Cloud/network preview, start Vite with `pnpm exec vite --host 0.0.0.0`. Use the environment's forwarded preview URL; laptop localhost URLs do not transfer to the desktop. Static production files can be regenerated with `pnpm build`.
 
 ## Conversation preservation and limitations
 

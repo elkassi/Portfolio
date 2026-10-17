@@ -23,7 +23,7 @@ node node_modules/vite/bin/vite.js --host 127.0.0.1
 
 On Windows, `START-PORTFOLIO.cmd` runs the installed local project. The terminal must stay open while viewing the preview. Vite prints the exact local URL; the default port is 5173.
 
-For a remote/Cloud preview, use `pnpm dev -- --host 0.0.0.0` and the environment's forwarded URL. No environment secrets, backend, external font service or API keys are required. The preserved local build used Node.js 24.15; Node 24 LTS is a suitable setup target. Use pnpm with the supplied lockfile for reproducibility.
+For a remote/Cloud preview, use `pnpm exec vite --host 0.0.0.0` and the environment's forwarded URL. No environment secrets, backend, external font service or API keys are required. The preserved local build used Node.js 24.15; Node 24 LTS is a suitable setup target. Use pnpm with the supplied lockfile for reproducibility.
 
 ## Build
 
