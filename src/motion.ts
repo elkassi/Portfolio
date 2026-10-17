@@ -40,16 +40,23 @@ export function useSmoothScroll() {
 
 export function transitionPage(swap: () => void) {
   const curtain = document.querySelector<HTMLElement>('.route-curtain');
-  if (!curtain || reduced()) { swap(); return undefined; }
+  if (!curtain || reduced() || document.hidden) { swap(); return undefined; }
   const panels = curtain.querySelectorAll('.route-curtain-panel');
+  let swapped = false;
+  const commit = () => { if (!swapped) { swapped = true; swap(); } };
+  // Keep routing usable if a throttled animation frame never reaches its callback.
+  const swapTimer = window.setTimeout(commit, 650);
+  const releaseTimer = window.setTimeout(() => { commit(); timeline.kill(); clearPageTransition(); }, 1500);
+  const clearTimers = () => { window.clearTimeout(swapTimer); window.clearTimeout(releaseTimer); };
   const timeline = gsap.timeline();
+  timeline.eventCallback('onComplete', clearTimers);
   timeline.set(curtain, { visibility: 'visible', pointerEvents: 'auto' })
     .fromTo(panels, { scaleY: 0, transformOrigin: 'bottom' }, { scaleY: 1, duration: .42, stagger: .055, ease: 'power3.inOut' })
-    .call(swap)
+    .call(commit)
     .set(panels, { transformOrigin: 'top' })
     .to(panels, { scaleY: 0, duration: .52, stagger: .045, ease: 'power3.inOut' }, '+=.08')
     .set(curtain, { visibility: 'hidden', pointerEvents: 'none' });
-  return timeline;
+  return { kill: () => { clearTimers(); timeline.kill(); } };
 }
 
 export function clearPageTransition() {

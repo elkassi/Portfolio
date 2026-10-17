@@ -26,6 +26,7 @@ backups/
 *conversation-archive*/
 rollout-*.jsonl
 CONVERSATION_TRANSCRIPT.md
+PORTFOLIO_CHAT_HISTORY.md
 RESPONSE_MESSAGES_APPENDIX.md
 BACKUP_MANIFEST.json
 *.sqlite

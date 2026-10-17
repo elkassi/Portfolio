@@ -54,7 +54,7 @@ pnpm preview
 - `src/App.tsx`: composition and routes.
 - `src/projectIndex.ts`: category membership and localized project-date formatting.
 - `src/components/ProjectExplorer.tsx`, `ProjectBlueprint.tsx`, and `src/projects.css`: the visual project directory, concept diagrams and responsive preview behavior.
-- `src/components/ProjectDossier.tsx`, `SystemWalkthrough.tsx`, `src/caseEditorial.ts`, and `src/dossier.css`: the latest detail-page design and interactive workflow presentation. This revision builds; its complete browser/mobile QA is still pending.
+- `src/components/ProjectDossier.tsx`, `SystemWalkthrough.tsx`, `src/caseEditorial.ts`, and `src/dossier.css`: the detail-page design and interactive workflow presentation. Representative desktop/tablet/mobile checks and scoped fixes are recorded in `VERIFICATION.md`; user approval remains pending.
 - `src/styles.css`: the base monochrome visual system and responsive content layouts.
 - `src/motion.ts`: GSAP timelines, ScrollTrigger choreography, Lenis scrolling and page transitions.
 - `src/motion.css`: scene compositions, masks, sticky stages and responsive / reduced-motion fallbacks.
@@ -106,4 +106,4 @@ Every project has a distinct SVG concept diagram based on supplied project facts
 
 Individual projects now use an editorial opening with a concept diagram, accurate role/date, a sticky chapter bar, distinct problem/outcome sections, and a selectable workflow scene for documented workflows. Industrial contributions reuse the detailed career source. Previous/all/next navigation keeps the collection easy to explore. Projects with limited evidence omit unsupported sections.
 
-The home and explorer were approved by the user; preserve them. The latest dossier revision has passed compilation, but its full responsive/interaction review and user approval remain outstanding. See the handoff before continuing. Generated build files, dependencies, machine credentials and raw conversation archives are excluded from Git.
+The home and explorer were approved by the user; preserve them. The dossier now has representative responsive/interaction verification, with reduced-motion emulation and user approval still outstanding. See `VERIFICATION.md` and the handoff before continuing. Generated build files, dependencies, machine credentials and raw conversation archives are excluded from Git.

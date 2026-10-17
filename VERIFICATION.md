@@ -1,5 +1,29 @@
 # Verification — 17 October 2026
 
+## Desktop continuation — current local revision
+
+This section supersedes the unfinished dossier QA status recorded below. The older sections remain historical evidence. The detail design still awaits the user's visual approval.
+
+- Cloned `main` at `99f01dc` into `Portfolio` on the desktop; the initial checkout was clean. Read the entire supplied private history outside the repository and the repository continuity documents before editing.
+- `pnpm install --frozen-lockfile` succeeded without changing the lockfile. Used the installed Node 24.19 runtime for the preview and production build; the system Node 22.11 is below Vite's supported minimum.
+- `pnpm check` and `pnpm build` passed after the fixes. Production output: 471.73 kB JS (155.26 kB gzip), 105.60 kB CSS (20.62 kB gzip).
+- Browser QA used the local Vite server in the in-app Chromium browser. Desktop review: 1440 × 900 and 1280 × 720; tablet: 768 × 1024; mobile: 390 × 844 and 320 × 740. English/French and light/dark were exercised, with detailed interaction checks concentrated on TexteGuard, Lear, Renault and the Python stock project. This is a representative matrix, not every project in every combination.
+- All ten project routes were loaded directly/reloaded at 1280 × 720. Rendered titles and all confirmed dates matched the inventory; document scroll/client widths matched. French direct-load checks also covered the ten projects at 320px during the review. OpenCV and Arduino omitted undocumented workflow/contribution sections; EMSI Analytics had sequential story/contribution chapters.
+- TexteGuard: selected stages by pointer and keyboard; verified ArrowDown/Up/Right/Left, Home/End, focus following selection, Next → Next → Restart, description text and active module/reticle changes. Repeated keyboard and Next/Restart checks after the fixes. French mobile End/Restart and Tab access to the description worked, with a computed visible 2px focus outline.
+- Lear: French desktop/tablet/mobile presentation and stage selection; shared pause controls both reported pressed and the flow signal computed as paused. The selected mobile stage scrolled fully into view. Renault's stage selection, Next/Restart and contribution chapter were verified with keyboard activation.
+- Chapter actions preserved the project hash. Renault's contribution settled at about 177px below the bar ending at about 154px on desktop. The tablet review exposed a 10px header/bar overlap; measured header/chapter heights now determine sticky positions and scroll offsets.
+- Previous navigation (Lear → TexteGuard), next navigation (Renault → Medical) and return-to-category navigation were exercised. The destination heading received focus. A transition was observed remaining covered; a cancellable timer fallback now commits the route and clears shutters if animation callbacks stall. The same shutters/normal choreography are retained.
+- Narrow French stage titles originally overlapped adjacent stages. The 160px horizontally scrolling mobile stage strip, bounded label width and automatic selected-stage positioning fixed this. Correct ARIA orientation follows the 899px breakpoint. Nontechnical walkthrough labels now have equivalent French translations.
+- A 320px Windows viewport with a 15px scrollbar originally overflowed because of the body's 320px minimum. A dossier-only override removes that minimum; dossier clipping also contains decorative entrance motion. Settled 320px Python/SOC views had equal client/scroll widths (305px). The home/explorer styles were not rewritten.
+- Main dossier copy computed as `rgb(8, 8, 8)` in light mode; walkthrough body copy computed as `rgb(255, 255, 255)` on its dark surface. Light/dark switching was visually reviewed.
+- Confirmed the offscreen workflow signal computes as paused. Explicit pause stops continuous diagram loops and makes reticle changes immediate. Hidden-document stopping and dynamic reduced-motion handling were reviewed in source.
+- Final French 320px direct-load geometry checks returned zero horizontal overflow for all ten dossiers, including during their entrances. Rapid Lear → Renault hash changes settled on Renault with shutters hidden; the invalid-project fallback received heading focus. The Software return route showed its two projects. A final 1440px home review showed the preserved engineering opening with no overflow. Preview and existing CV HTTP checks returned 200; the CV response retained `application/pdf`.
+- Review captures are viewport screenshots: `dossier-desktop-opening.jpg`, `dossier-desktop-workflow.jpg`, `dossier-mobile-fr-390.jpg`, and `dossier-mobile-fr-320.jpg`. These depict the portfolio, not the described applications.
+
+Limits: the browser interface does not expose reduced-motion emulation, so an OS reduced-motion preference was not emulated. The CSS/GSAP fallbacks and media-query cleanup were source-reviewed only. No screen-reader speech, physical touch device, performance benchmark, or exhaustive browser compatibility test was run. Actual application screenshots, certificate proofs and missing source evidence remain outstanding in `CONTENT-CHECKLIST.md`.
+
+The approved home/explorer implementation and factual inventory are preserved. No commit, push or website deployment was performed; the supplied private history was never copied into the checkout.
+
 ## Build
 
 - Strict TypeScript checking passed.

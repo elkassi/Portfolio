@@ -2,6 +2,8 @@
 
 Prepared 17 October 2026. Repository: https://github.com/elkassi/Portfolio. This document is a curated, public-safe implementation handoff, not the raw conversation transcript.
 
+Desktop continuation, 17 October 2026: the existing project is now running locally and the dossier has received representative desktop/tablet/mobile, bilingual and theme checks. Scoped fixes cover narrow stage labels, orientation/focus/translations, animation lifecycle, sticky offsets and route-transition recovery. Read the **Desktop continuation** section at the top of `VERIFICATION.md` for the current results and limits; older pending-QA statements below describe the migration baseline. The detail design still has not received user approval. The private history remains outside Git, and no deployment or source push was made during this continuation.
+
 ## Read this first
 
 The user requested migration of all existing work from a local Windows Codex session to GitHub for continuation in Codex Cloud from another computer. **Do not restart, replace the architecture, introduce a template, or redesign completed pages.** Preserve the work already approved.
