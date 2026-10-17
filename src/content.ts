@@ -91,7 +91,7 @@ export const projects: Project[] = [
   },
   {
     id: 'lear',
-    title: { en: 'Production planning', fr: 'Planification de production' },
+    title: { en: 'Lear Corporation — Production Planner', fr: 'Lear Corporation — Planification de production' },
     subtitle: { en: 'Lear Corporation · Industrial software', fr: 'Lear Corporation · Logiciel industriel' },
     category: 'software',
     type: { en: 'Industry internship', fr: 'Stage en entreprise' },
@@ -200,7 +200,7 @@ export const projects: Project[] = [
   },
   {
     id: 'renault',
-    title: { en: 'Tooling management', fr: 'Gestion d’outillage' },
+    title: { en: 'Renault Tanger — Tooling Manager', fr: 'Renault Tanger — Gestion d’outillage' },
     subtitle: { en: 'Renault Tanger · Workshop operations', fr: 'Renault Tanger · Opérations d’atelier' },
     category: 'software',
     type: { en: 'Industry internship', fr: 'Stage en entreprise' },
@@ -272,7 +272,7 @@ export const projects: Project[] = [
   },
   {
     id: 'emsi-analytics',
-    title: { en: 'EMSI Analytics', fr: 'EMSI Analytics' },
+    title: { en: 'EMSI Analytics — Power BI', fr: 'EMSI Analytics — Power BI' },
     subtitle: { en: 'School data with Power BI', fr: 'Données scolaires avec Power BI' },
     category: 'data',
     type: { en: 'Academic project', fr: 'Projet académique' },
@@ -298,7 +298,7 @@ export const projects: Project[] = [
   },
   {
     id: 'opencv',
-    title: { en: 'Image processing', fr: 'Traitement d’images' },
+    title: { en: 'AI Presence', fr: 'AI Presence' },
     subtitle: { en: 'OpenCV exploration', fr: 'Exploration avec OpenCV' },
     category: 'exploration',
     type: { en: 'Academic work sample', fr: 'Travail académique' },
@@ -503,7 +503,7 @@ export const missingInformation: { id: string; detail: string }[] = [
   { id: 'texteguard-contribution', detail: 'Confirm personal responsibilities, team composition, model/data provenance, and evaluation details for TexteGuard AI. No accuracy or sole-authorship claim is displayed.' },
   { id: 'medical-details', detail: 'Supply Doctors-service endpoints, service interactions, and documentation. Project date confirmed as April 2026. Only the assigned Doctors service and frontend scope are attributed personally.' },
   { id: 'power-bi-details', detail: 'Supply Power BI screenshots, data source/model, actual measures, and precise personal contribution beyond project leadership. Date confirmed as June 2026.' },
-  { id: 'opencv-details', detail: 'Confirm the OpenCV project title, language, processing methods, inputs/outputs, personal contribution, and results. Date confirmed as May 2026.' },
+  { id: 'opencv-details', detail: 'AI Presence is the user-confirmed title for the OpenCV project. Confirm language, processing methods, inputs/outputs, personal contribution, and results. Date confirmed as May 2026.' },
   { id: 'arduino-details', detail: 'Confirm the robotics personal contribution and which line-following, obstacle-avoidance, or follow-me modes were implemented and tested. Date confirmed as June 2024. No completed mode is currently claimed.' },
   { id: 'credentials', detail: 'Supply certificate documents, exact titles, dates, and credential links for CV-listed courses, Oracle training, the unspecified August 2026 Coursera certificate, and Wall Street English Level 20. None is presented as a verified certificate.' },
   { id: 'education-history', detail: 'Confirm dates and any qualification for earlier economics studies. No economics degree is inferred or published.' },

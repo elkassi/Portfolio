@@ -7,13 +7,13 @@ Updated 17 October 2026 from the supplied CV, original brief and direct user cor
 | Project | Date | Basis |
 | --- | --- | --- |
 | TexteGuard AI | April–June 2025 | Supplied CV |
-| Lear production planning | July–August 2026 | Supplied CV and brief |
+| Lear Corporation — Production Planner | July–August 2026 | Supplied CV and brief |
 | Smart City IoT | 2025–2026 | Supplied CV |
 | Multi-agent SOC / IPS | March–June 2026 | Supplied CV |
-| Renault tooling management | July–August 2025 | CV, explicitly confirmed by user |
+| Renault Tanger — Tooling Manager | July–August 2025 | CV, explicitly confirmed by user |
 | Medical microservices | April 2026 | User confirmation |
-| EMSI Power BI | June 2026 | User confirmation |
-| OpenCV image processing | May 2026 | User confirmation |
+| EMSI Analytics — Power BI | June 2026 | User confirmation |
+| AI Presence (OpenCV project) | May 2026 | User-confirmed title and date |
 | Arduino 4WD robotics | June 2024 | User confirmation |
 | Independent Python / SQLite stock management | March–June 2025 | User confirmation and description |
 
@@ -34,7 +34,7 @@ Oracle is **a certificate obtained in 2026**, not a project. It appears only in 
 - TexteGuard: precise individual role, model/data provenance and evaluation results. No accuracy claim or sole authorship is invented.
 - Medical project: Doctors-service endpoints and integration details; personal scope remains one service and frontend work within a six-service team project.
 - Power BI: actual data model, measures, screenshots and contribution beyond leadership. No school-performance findings are invented.
-- OpenCV: exact title, language, operations and results. No detection or deep-learning capability is inferred.
+- AI Presence: the user confirmed this display name for the OpenCV project. Language, operations and results still need evidence. The name does not establish attendance, recognition, detection or deep-learning capabilities.
 - Robotics: exact personal role and which modes were implemented and tested. No completed mode is inferred.
 - Economics studies and optional marks remain omitted until their context is established.
 

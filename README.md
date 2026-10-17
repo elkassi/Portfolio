@@ -106,4 +106,10 @@ Every project has a distinct SVG concept diagram based on supplied project facts
 
 Individual projects now use an editorial opening with a concept diagram, accurate role/date, a sticky chapter bar, distinct problem/outcome sections, and a selectable workflow scene for documented workflows. Industrial contributions reuse the detailed career source. Previous/all/next navigation keeps the collection easy to explore. Projects with limited evidence omit unsupported sections.
 
-The home and explorer were approved by the user; preserve them. The dossier now has representative responsive/interaction verification, with reduced-motion emulation and user approval still outstanding. See `VERIFICATION.md` and the handoff before continuing. Generated build files, dependencies, machine credentials and raw conversation archives are excluded from Git.
+Walkthroughs use five concept-diagram families in `WalkthroughDiagram.tsx`: inference, allocation, pipeline, network and inventory. Each is assigned to projects by documented scope. Supporting English/French implementation notes live in `caseEditorial.ts`; do not fill gaps with assumed capabilities.
+
+## Approved local versions
+
+The user approved the current composition on 17 October 2026. Before this project's title/diagram polish, a local checkpoint was saved as commit `ae61f34`, tag `approved-portfolio-2026-10-17`. The user subsequently approved that polish, preserved under local tag `approved-projects-2026-10-17`. Future approved milestones should get a local Git checkpoint before the next requested changes. Saving a version does not authorize pushing or deployment. To inspect an earlier version, prefer a separate checkout/worktree so current uncommitted work remains intact.
+
+The home, explorer, dossier composition and latest title/diagram polish were approved by the user; preserve them. Further name suggestions are under discussion and have not been applied. Reduced-motion emulation remains outstanding. See `VERIFICATION.md` and the handoff before continuing. Generated build files, dependencies, machine credentials and raw conversation archives are excluded from Git.

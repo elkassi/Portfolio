@@ -1,6 +1,23 @@
 # Verification — 17 October 2026
 
-## Desktop continuation — current local revision
+## Project polish — current local revision
+
+The user approved the existing composition, colors and dossier interactions before this batch. That version is preserved locally as commit `ae61f34`, tag `approved-portfolio-2026-10-17`, on `codex/project-polish`. The user subsequently approved the new polish, preserved under local tag `approved-projects-2026-10-17`. Nothing was pushed or deployed.
+
+- Changed only the requested display names: Lear Corporation — Production Planner; Renault Tanger — Tooling Manager; AI Presence; EMSI Analytics — Power BI. Equivalent French titles are present. Project IDs, all ten dates and the remaining titles are unchanged. AI Presence is a rename of the existing OpenCV entry, with no new capability claim.
+- Added five original SVG walkthrough families: NLP inference, workload allocation, isometric pipeline, service network and inventory flow. Medical/SOC and Renault/Python share families with project-specific internals. Graphics remain labeled concepts. Projects without documented workflows still omit the section.
+- Added bilingual implementation notes derived from the existing confirmed content and career responsibilities, particularly Lear's allocation method/constraints and Renault's tooling, stock and printing work. No measurements, screenshots, source links or unsupported implementation detail were added.
+- `pnpm check` and `pnpm build` passed. Production output: 487.14 kB JS (160.29 kB gzip), 108.22 kB CSS (21.02 kB gzip). No dependency or lockfile change was needed.
+- Visually reviewed the five styles in desktop scenes at 1440 × 900 / 1280 × 720, including stage highlights and added notes. Reviewed the network scene at 390 × 844 in French dark mode. Review captures in `screenshots/polish-*.jpg` are viewport captures and may show a scrolled portion of the scene.
+- At French dark 320 × 740, directly loaded all ten dossiers. Rendered dates and diagram assignments matched the inventory; each document and title reported zero horizontal overflow. New company titles fit without cutting words. This is geometry/route coverage for all ten, not a claim of every project in every theme/viewport combination.
+- At English light 1280 × 720, exercised End and Restart for all seven documented workflows. Each selected the last stage, kept focus on the selected tab, highlighted exactly one diagram stage, positioned the paused reticle correctly, and restarted at stage one. Rechecked all four arrow keys plus Home/End in Smart City; focus followed selection.
+- Verified shared pause in Lear: new LED animation and both signal paths computed as paused. New animation selectors inherit offscreen/hidden-document pause and reduced-motion CSS; these lifecycle paths were also source-reviewed. OS reduced-motion emulation and screen-reader speech were not tested.
+- Explorer search: AI Presence returned one project; Power BI returned EMSI Analytics — Power BI; clearing search restored ten. Industry retained exactly the Lear and Renault projects with company names visible. The explorer/home layout components and their CSS were unchanged.
+- Browser warning/error log was empty at the end of the interaction checks. `git diff --check` passed. Compared with the checkpoint, App, motion routing, ProjectDossier, the home/explorer implementations, credentials, dates and contribution sources were not edited in this batch.
+
+The current polish has the user's approval. `AGENTS.md` and `README.md` record the requested workflow: save approved milestones locally before the next scoped edit, preserve unrelated work, and never treat saving as permission to push or deploy. This approval/checkpoint update changes documentation only; it does not claim additional visual or runtime checks.
+
+## Desktop continuation — pre-polish baseline
 
 This section supersedes the unfinished dossier QA status recorded below. The older sections remain historical evidence. The detail design still awaits the user's visual approval.
 
