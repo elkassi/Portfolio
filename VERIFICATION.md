@@ -1,5 +1,15 @@
 # Verification — 17 October 2026
 
+## Approved project names
+
+- Applied the user-approved names in English/French: Smart City IoT — Urban Analytics, Multi-Agent AI — SOC / IPS and AI Presence — Computer Vision. TexteGuard AI retains its name and now uses the RoBERTa subtitle. SOC and OpenCV subtitles also match the approved suggestions.
+- The only application source changes are six localized title/subtitle fields in `src/content.ts`. Project IDs, dates, descriptions, contributions, routes, diagrams, layout and styles are unchanged from checkpoint `f95438c`. The approved naming revision is preserved under local tag `approved-project-names-2026-10-17`.
+- `pnpm check` and `pnpm build` passed. Output: 487.35 kB JS (160.34 kB gzip), 108.22 kB CSS (21.02 kB gzip). Reused the running preview on port 5173; no dependency or lockfile changes.
+- English explorer at 1280 × 720: selected the four affected projects and read the updated preview names/subtitles; measured zero document/title horizontal overflow. Opened their dossiers and observed the updated headings. French SOC dossier at 320 × 740 was visually reviewed and measured zero document/title overflow.
+- French explorer at 390 × 844: all ten list titles measured zero horizontal overflow; SOC and OpenCV preview copy was reviewed. Searching "Vision par ordinateur" returned the single renamed OpenCV project. The collection still contains ten projects with the same dates. Screenshots: `names-mobile-fr.jpg` and `names-approved.jpg`.
+- At 320 × 740 the explorer retained a 15px document overflow from the existing global 320px body minimum and Windows scrollbar; individual measured titles/subtitles did not overflow. This content-only change leaves those existing styles intact. No new claim is made about motion, dark mode, screen readers or physical devices.
+- Browser warning/error log was empty. `git diff --check` passed. No push or public deployment.
+
 ## Project polish — current local revision
 
 The user approved the existing composition, colors and dossier interactions before this batch. That version is preserved locally as commit `ae61f34`, tag `approved-portfolio-2026-10-17`, on `codex/project-polish`. The user subsequently approved the new polish, preserved under local tag `approved-projects-2026-10-17`. Nothing was pushed or deployed.

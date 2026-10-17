@@ -8,12 +8,12 @@ Updated 17 October 2026 from the supplied CV, original brief and direct user cor
 | --- | --- | --- |
 | TexteGuard AI | April–June 2025 | Supplied CV |
 | Lear Corporation — Production Planner | July–August 2026 | Supplied CV and brief |
-| Smart City IoT | 2025–2026 | Supplied CV |
-| Multi-agent SOC / IPS | March–June 2026 | Supplied CV |
+| Smart City IoT — Urban Analytics | 2025–2026 | Supplied CV; display name approved by user |
+| Multi-Agent AI — SOC / IPS | March–June 2026 | Supplied CV; display name approved by user |
 | Renault Tanger — Tooling Manager | July–August 2025 | CV, explicitly confirmed by user |
 | Medical microservices | April 2026 | User confirmation |
 | EMSI Analytics — Power BI | June 2026 | User confirmation |
-| AI Presence (OpenCV project) | May 2026 | User-confirmed title and date |
+| AI Presence — Computer Vision (OpenCV project) | May 2026 | User-confirmed title and date |
 | Arduino 4WD robotics | June 2024 | User confirmation |
 | Independent Python / SQLite stock management | March–June 2025 | User confirmation and description |
 

@@ -58,7 +58,7 @@ export const projects: Project[] = [
   {
     id: 'texteguard',
     title: { en: 'TexteGuard AI', fr: 'TexteGuard AI' },
-    subtitle: { en: 'NLP text classification', fr: 'Classification de texte par NLP' },
+    subtitle: { en: 'AI-generated text analysis with RoBERTa', fr: 'Analyse de textes générés par IA avec RoBERTa' },
     category: 'ai',
     type: { en: 'Academic project', fr: 'Projet académique' },
     year: '2025-04/2025-06',
@@ -125,7 +125,7 @@ export const projects: Project[] = [
   },
   {
     id: 'smart-city',
-    title: { en: 'Smart City IoT', fr: 'Smart City IoT' },
+    title: { en: 'Smart City IoT — Urban Analytics', fr: 'Smart City IoT — Analyse urbaine' },
     subtitle: { en: 'Urban data, made readable', fr: 'Des données urbaines lisibles' },
     category: 'data',
     type: { en: 'Academic team project', fr: 'Projet académique en équipe' },
@@ -162,8 +162,8 @@ export const projects: Project[] = [
   },
   {
     id: 'soc-ips',
-    title: { en: 'Multi-agent SOC / IPS', fr: 'SOC / IPS multi-agents' },
-    subtitle: { en: 'Security analysis & risk scoring', fr: 'Analyse de sécurité et scoring de risque' },
+    title: { en: 'Multi-Agent AI — SOC / IPS', fr: 'IA multi-agents — SOC / IPS' },
+    subtitle: { en: 'Machine learning for security analysis and risk scoring', fr: 'Apprentissage automatique pour l’analyse de sécurité et le scoring de risque' },
     category: 'ai',
     type: { en: 'Academic team project', fr: 'Projet académique en équipe' },
     year: '2026-03/2026-06',
@@ -298,8 +298,8 @@ export const projects: Project[] = [
   },
   {
     id: 'opencv',
-    title: { en: 'AI Presence', fr: 'AI Presence' },
-    subtitle: { en: 'OpenCV exploration', fr: 'Exploration avec OpenCV' },
+    title: { en: 'AI Presence — Computer Vision', fr: 'AI Presence — Vision par ordinateur' },
+    subtitle: { en: 'Image processing with OpenCV', fr: 'Traitement d’images avec OpenCV' },
     category: 'exploration',
     type: { en: 'Academic work sample', fr: 'Travail académique' },
     year: '2026-05',
