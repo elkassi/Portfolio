@@ -1,5 +1,15 @@
 # Verification — 17 October 2026
 
+## Arrow and wide-screen refinement — 18 October 2026
+
+- Replaced the 15 decorative arrow glyph instances across React views with a shared SVG component (some instances repeat in lists). Existing SVG arrows remain. The three phone graphic arrows measured 18 × 18px, with `aria-hidden=true`; no native arrow text glyph remained in the checked dossier or React source. This removes dependence on emoji font presentation. The actual updated page was not tested in iOS Safari; Chromium viewport checks and SVG/source inspection were performed.
+- Widened only the home/header at 1800px and above, up to 2240px, with proportional gutters and larger opening/body/field typography. At 2560 × 1320 (browser space approximating the supplied monitor screenshot), the opening measured 2240px with 152.5px side margins, 184px title text and no title/document overflow. The old opening was capped at 1680px. French/dark and English/light views were inspected.
+- The wide pinned discipline list measured 780px high with 163.84px labels at 2560px. Reviewed the settled discipline stage at scrollY 1056, fully below the header; its top was 90px and document overflow was zero. The existing GSAP timeline, stage visibility/inert handling and route logic are unchanged. New layout sizing remains restricted to the existing motion-enabled tall desktop presentation.
+- Reviewed English opening and settled discipline views at 1980 × 960: content width 1841.25px, list height 595.19px, zero title/document overflow. A 1600 × 800 view confirmed the new wide breakpoint was inactive and document overflow was zero. These are representative browser CSS viewport sizes, not a claim of every resolution/zoom/browser.
+- At 390 × 844, checked a fresh mobile home load, inspected/captured all three SVG field arrows, and followed Industry into its two-project collection. At French dark 320 × 740, opened Lear; End selected the final workflow stage and Restart restored the first. The collection and dossier had zero document overflow. Existing phone layout CSS was preserved.
+- `pnpm check` and `pnpm build` passed: JS 488.19 kB (160.61 kB gzip), CSS 109.45 kB (21.28 kB gzip). No dependencies, facts, project IDs/dates, CV or QR assets changed. Review captures: `responsive-home-*.jpg`, `responsive-disciplines-*.jpg`, `responsive-mobile-arrows.jpg`.
+- `git diff --check` passed. Private user screenshots/photos were not copied into source or public assets. The previous published version is retained under `published-portfolio-2026-10-18`; the refinement uses the same Sites identity and public address. OS reduced-motion emulation and physical iPhone validation remain unperformed.
+
 ## Public-hosting preparation and responsive review
 
 - The user explicitly requested permanent public hosting, with future CV access. The corrected large-monitor resolution is 2560 × 1440. The previous Cloudflare email-protected tunnel depends on the desktop and is not permanent hosting. A Sites project is now reserved in `.openai/hosting.json`; the native deployment result must confirm publication.

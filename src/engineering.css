@@ -17,6 +17,7 @@
 .header-contact:hover { background: var(--accent); color: var(--paper); }
 .black-button:hover { color: var(--paper); }
 .cursor-halo { display: none; }
+.ui-arrow { display: inline-block; vertical-align: -.125em; flex-shrink: 0; }
 
 .immersive-hero { scroll-margin-top: 105px; background-color: var(--paper); background-image: radial-gradient(var(--diagram-grid) .8px,transparent .8px); background-size: 20px 20px; }
 .hero-pin { isolation: isolate; overflow: clip; }
@@ -73,6 +74,33 @@
 
 @media (min-width: 900px) {
   .hero-pin, .header-inner { width: min(1680px,calc(100% - 112px)); }
+}
+
+/* Expand the opening on large desktops while preserving smaller layouts. */
+@media (min-width: 1800px) {
+  .hero-pin, .header-inner { width: min(2240px,calc(100% - clamp(112px,6.25vw,160px))); }
+  .immersive-hero h1 { font-size: clamp(148px,7.2vw,184px); }
+  .hero-intro-stage .hero-student { font-size: 11px; }
+  .hero-intro-stage .hero-intro { font-size: clamp(15px,.75vw,18px); max-width: 36ch; }
+  .hero-intro-stage .hero-actions .black-button,
+  .hero-intro-stage .hero-actions .quiet-link { font-size: 13px; }
+  .hero-intro-stage .hero-availability { font-size: 11px; }
+  .hero-domain-line > strong { font-size: clamp(105px,6.4vw,172px); }
+  .domain-stage-heading > .small-label, .domain-stage-heading > a,
+  .domain-stage-foot { font-size: 12px; }
+  .domain-caption { font-size: 14px; }
+  .hero-domain-line > .mono { font-size: 11px; }
+  .art-field strong { font-size: 15px; }
+  .art-field-index, .art-field-stack, .art-heading, .art-controls > .mono { font-size: 10px; }
+  .art-field-1 { min-width: 180px; }
+  .hero-proof-names { font-size: 14px; }
+  .hero-scroll-cue { font-size: 10px; }
+  .main-nav a { font-size: 13px; }
+  .identity-name { font-size: 16px; }
+}
+@media (min-width: 1800px) and (min-height: 900px) and (prefers-reduced-motion: no-preference) {
+  .hero-domain-list { height: min(62svh,780px); display: grid; grid-template-rows: repeat(3,minmax(0,1fr)); }
+  .hero-domain-line { height: 100%; padding-block: 18px; }
 }
 
 @media (min-width: 900px) and (min-height: 680px) and (prefers-reduced-motion: no-preference) {

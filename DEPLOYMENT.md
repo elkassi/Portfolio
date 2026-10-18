@@ -1,6 +1,6 @@
 # Portfolio hosting
 
-The user requested a permanent public portfolio on 17 October 2026. The reserved address is:
+The user requested a permanent public portfolio on 17 October 2026. Version 1 was successfully published on 18 October 2026. The live address is:
 
 https://noureddine-el-kassi.peppyzebra32.chatgpt.site/
 

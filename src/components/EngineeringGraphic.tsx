@@ -1,3 +1,4 @@
+import ArrowIcon from './ArrowIcon';
 import { useEffect, useRef, useState } from 'react';
 import type { Lang } from '../content';
 
@@ -156,7 +157,7 @@ export default function EngineeringGraphic({ lang }: { lang: Lang }) {
   return <div className="engineering-art" ref={container}>
     <div className="art-heading mono"><span>{lang==='en'?'CONNECTED DISCIPLINES':'DOMAINES CONNECTÉS'}</span><span aria-hidden="true">[ 01 — 03 ]</span></div>
     <canvas ref={canvas} aria-hidden="true"/>
-    <nav className="art-fields" aria-label={lang==='en'?'Explore connected disciplines':'Explorer les domaines connectés'}>{fields.map((item,index)=><a href={`#/projects/${item.id}`} key={item.id} className={`art-field art-field-${index} ${active===index?'is-active':''}`} onPointerEnter={()=>{field.current=index;setActive(index);repaint.current();}} onFocus={()=>{field.current=index;setActive(index);repaint.current();}}><span className="art-field-index mono">0{index+1} / {item.detail}</span><strong>{item.name}<span aria-hidden="true">↗</span></strong><span className="art-field-stack mono">{item.stack}</span></a>)}</nav>
+    <nav className="art-fields" aria-label={lang==='en'?'Explore connected disciplines':'Explorer les domaines connectés'}>{fields.map((item,index)=><a href={`#/projects/${item.id}`} key={item.id} className={`art-field art-field-${index} ${active===index?'is-active':''}`} onPointerEnter={()=>{field.current=index;setActive(index);repaint.current();}} onFocus={()=>{field.current=index;setActive(index);repaint.current();}}><span className="art-field-index mono">0{index+1} / {item.detail}</span><strong>{item.name}<span aria-hidden="true"><ArrowIcon direction="up-right"/></span></strong><span className="art-field-stack mono">{item.stack}</span></a>)}</nav>
     <div className="art-controls"><span className="mono">{lang==='en'?'Move to rotate · select a field':'Bougez pour orienter · choisissez un domaine'}</span><button onClick={()=>setPaused(!paused)} aria-label={paused?(lang==='en'?'Play graphic':'Animer le schéma'):(lang==='en'?'Pause graphic':'Mettre le schéma en pause')} aria-pressed={paused}>{paused?<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 5 8 5-8 5Z"/></svg>:<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10M13 5v10"/></svg>}</button></div>
   </div>;
 }
