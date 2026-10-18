@@ -13,4 +13,4 @@ Latest user feedback, 17 October 2026: the current site, dossier composition and
 - Preserve responsive, keyboard, pause and reduced-motion behavior. Scope detail-page styles so the approved opening/explorer do not regress.
 - Run `pnpm check` and `pnpm build` after changes. Report visual checks actually performed; do not claim untested behavior passed.
 - Keep secrets, local session records, raw conversations and private reference materials outside Git.
-- Do not deploy the website without a new explicit request. Uploading source to GitHub does not authorize a public site deployment.
+- On 17 October 2026, the user explicitly requested a permanent public deployment for future recruiter/CV access. Continue the Sites project in `.openai/hosting.json`; preserve its identity and approved design. Keep later unapproved revisions available for review. The user's latest correction is 2560 × 1440 for the large monitor. Finish the website and deployment first; QR creation and CV edits are deferred until the user is ready.

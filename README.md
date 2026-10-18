@@ -1,8 +1,8 @@
 # Noureddine El Kassi — portfolio
 
-A bilingual React / TypeScript portfolio using Vite and Tailwind CSS. This is a local build; it has not been published.
+A bilingual React / TypeScript portfolio using Vite and Tailwind CSS. Permanent hosting is configured through Sites; see [DEPLOYMENT.md](DEPLOYMENT.md) for the address and publication workflow.
 
-Source repository: [elkassi/Portfolio](https://github.com/elkassi/Portfolio). Website deployment has not been performed. The source upload preserves an existing project, including the approved home and project explorer and the latest project-detail revision.
+Source repository: [elkassi/Portfolio](https://github.com/elkassi/Portfolio). The source preserves the existing approved home, project explorer and project-detail revision. The user explicitly requested public hosting on 17 October 2026. Earlier statements about no deployment describe historical revisions.
 
 For continuity, read [PROJECT_HANDOFF.md](PROJECT_HANDOFF.md). For a new Cloud session, follow [CLOUD_SETUP.md](CLOUD_SETUP.md) and paste [CLOUD_CONTINUATION_PROMPT.md](CLOUD_CONTINUATION_PROMPT.md). The raw local conversation backup is private and outside this repository.
 

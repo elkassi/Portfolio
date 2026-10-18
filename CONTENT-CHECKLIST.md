@@ -40,6 +40,6 @@ Oracle is **a certificate obtained in 2026**, not a project. It appears only in 
 
 ## Publication
 
-The site is local. Public deployment still requires an explicit user request. Review project screenshots and files for confidential or personal data before publishing them.
+The user explicitly requested permanent public hosting on 17 October 2026. The Sites configuration is in `.openai/hosting.json`; see `DEPLOYMENT.md`. Keep private history/backups outside source and deployment archives. New project screenshots and files must still be reviewed for confidential or personal data. QR creation and CV edits are deferred until the user is ready after website completion/deployment.
 
 Structured unresolved information also lives in `src/content.ts` under `missingInformation`. Do not render that internal checklist on the public site.

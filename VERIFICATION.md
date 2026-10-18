@@ -1,5 +1,15 @@
 # Verification — 17 October 2026
 
+## Public-hosting preparation and responsive review
+
+- The user explicitly requested permanent public hosting, with future CV access. The corrected large-monitor resolution is 2560 × 1440. The previous Cloudflare email-protected tunnel depends on the desktop and is not permanent hosting. A Sites project is now reserved in `.openai/hosting.json`; the native deployment result must confirm publication.
+- Visually reviewed the home at 2560 × 1440, 2100 × 1600 (the earlier supplied size), 1440 × 900, 768 × 1024, English 390 × 844, and French dark 320 × 740. Measured zero horizontal document overflow in those settled views. At 2560px the existing opening content is centered within its 1680px maximum; no speculative wide-screen redesign was made. Captures are `screenshots/deploy-home-*.jpg`.
+- Observed the previously documented 15px explorer overflow at 320 × 740, caused by the 320px body minimum plus Windows scrollbar. Changed only that global minimum to zero. The French dark explorer then measured zero document overflow with all ten projects; searching Power BI returned one project. Home and dossier layouts also fit the same narrow viewport.
+- Exercised the 390px mobile menu, navigated to the collection, and confirmed it closed. Opened Lear from the narrow French collection, selected the final workflow stage using End, restarted at stage one, and confirmed both shared pause controls reported pressed. The dossier measured zero horizontal overflow. These are browser viewport/input checks, not physical-phone or screen-reader testing. Existing reduced-motion emulation limitations remain.
+- `pnpm check` and `pnpm build` passed. The Sites build wrapper could not invoke this machine's pnpm shim; the project's direct build succeeded. The supported static packager was verified with Git Bash outside the Windows sandbox and `TAR_OPTIONS=--force-local` for Windows drive paths. This tooling issue did not require dependency or app architecture changes.
+- Added only static hosting configuration and absolute canonical/social-preview metadata, alongside the one body-width correction. Project facts, routes, approved layout components, diagrams and dependencies are preserved. Private records are absent from tracked source. The user deferred QR creation and CV edits; draft QR files remain ignored and are absent from the published `public/` directory.
+- `git diff --check` passed. Deployment outcome and the public URL are to be reported from the native Sites result. No claim is made that every browser, phone or possible resolution was tested.
+
 ## Approved project names
 
 - Applied the user-approved names in English/French: Smart City IoT — Urban Analytics, Multi-Agent AI — SOC / IPS and AI Presence — Computer Vision. TexteGuard AI retains its name and now uses the RoBERTa subtitle. SOC and OpenCV subtitles also match the approved suggestions.
