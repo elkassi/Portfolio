@@ -11,7 +11,7 @@ import ProjectExplorer from './components/ProjectExplorer';
 import ProjectDossier from './components/ProjectDossier';
 import { categories, categoryById } from './projectIndex';
 import type { Filter } from './projectIndex';
-import { clearPageTransition, scrollToTarget, transitionPage, usePortfolioMotion, useSmoothScroll } from './motion';
+import { scrollToTarget, usePortfolioMotion, useSmoothScroll } from './motion';
 
 type Route = { page: 'home'; section: string } | { page: 'projects'; filter: Filter } | { page: 'project'; id: string };
 const categoryMark: Record<Filter, string> = { all: '∗', industry: '01', ai: '02', data: '03', software: '04', robotics: '05' };
@@ -71,20 +71,16 @@ export default function App() {
   const availability = `${lang === 'en' ? 'PFE internship' : 'Stage PFE'} · ${month}`;
   useSmoothScroll();
   usePortfolioMotion(`${routeKey}-${lang}`);
-  const routeRef = useRef(route);
-  routeRef.current = route;
-  const routeAnimation = useRef<ReturnType<typeof transitionPage>>(undefined);
   const previousRoute = useRef<Route | null>(null);
   useEffect(() => {
     const update = () => {
-      const next = readRoute(); const current = routeRef.current;
       setMenuOpen(false);
-      const crossPage = current.page !== next.page || (current.page === 'project' && next.page === 'project' && current.id !== next.id);
-      routeAnimation.current?.kill(); clearPageTransition();
-      if (crossPage) routeAnimation.current = transitionPage(() => setRoute(next)); else setRoute(next);
+      // Render the destination immediately; its entrance animations handle motion
+      // without hiding the header or covering the page between routes.
+      setRoute(readRoute());
     };
     window.addEventListener('hashchange', update);
-    return () => { window.removeEventListener('hashchange', update); routeAnimation.current?.kill(); clearPageTransition(); };
+    return () => window.removeEventListener('hashchange', update);
   }, []);
   useEffect(() => {
     document.documentElement.lang = lang; document.documentElement.dataset.theme = theme;

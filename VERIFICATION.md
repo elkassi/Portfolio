@@ -1,5 +1,13 @@
 # Verification — 17 October 2026
 
+## Route transition correction — 18 October 2026
+
+- The user's screenshot matches the old opaque route curtain: three full-height panels in `#101010` / `#222`, a 420ms staggered close, delayed swap, then 520ms staggered opening. Removed the overlay markup/styles, transition timeline, fallback timers and delayed route handling. Existing page content entrance animations remain; no new full-screen opacity animation was added.
+- `pnpm check` and `pnpm build` passed. Output approximately 486.90 kB JS (160.27 kB gzip), 116.24 kB CSS (22.65 kB gzip). `git diff --check` passed. No transition-curtain symbols remain in application source; no dependency or content change.
+- Local English/light 1600 × 900: clicked the home graphic's Industry link (2 entries), All work (10 entries), then used Enter to open Renault. Destinations rendered without a cover element; header remained visible and project focus moved to H1. Browser Back restored the ten-project collection and Forward restored Renault with H1 focus. A screenshot taken just after navigation showed destination content entering rather than a full-screen curtain.
+- French phone 390 × 844: Renault return link restored the remembered Industry collection (2 entries), no horizontal overflow. In dark mode, menu navigation to Home and then Projects restored all ten entries, closed the menu and focused H1, with zero curtain elements and no horizontal overflow.
+- Existing reduced-motion paths were preserved/source-reviewed; OS preference emulation, screen-reader speech, physical iOS Safari and every possible browser were not tested. The prior publication remains saved as `bace640` / `published-wide-site-2026-10-18`; this fix publishes to the same Site.
+
 ## Whole-site desktop sizing and contrast — 18 October 2026
 
 - Diagnosed the user's actual open Chrome tab at 2560 × 1215. Root color computed `rgb(8,8,8)` but body and inherited career/About text computed `rgb(90,88,89)`, with opacity 1 and no filter. Author CSS declared root color but no body color. Added explicit theme-based body foreground/background; no monitor setting was changed. Local light body/headings computed `rgb(8,8,8)` and dark body `rgb(255,255,255)`.

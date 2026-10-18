@@ -1,5 +1,7 @@
 # Portfolio continuity
 
+Latest transition correction, 18 October 2026: the user reported the black/gray full-screen interval between routes. Removed the three-panel route curtain and delayed route swap. Hash changes now render immediately; existing content entrance animations, scroll/focus handling and reduced-motion support remain. Do not restore a full-screen route cover. Prior published source is `bace640`, checkpoint `published-wide-site-2026-10-18`. Keep the latest wide-screen/text-color correction intact.
+
 Latest follow-up, 18 October 2026: the user requested the large-screen sizing across the whole website, including experience, About, technologies, certificates, contact, Atlas and dossiers. `src/responsive.css`, imported last, supplies the shared 1800px+ frame/type scale. Smaller layouts retain their dimensions. It also explicitly sets body foreground/background from the theme: the user's actual Chrome body computed as gray `rgb(90,88,89)` despite the root's black palette. Preserve this correction and inverted section colors. Previous live source: `0f75130`, tag `published-responsive-2026-10-18`. Publication continues at the same Site identity. QR/CV work remains deferred.
 
 Read `PROJECT_HANDOFF.md`, `CONTENT-CHECKLIST.md`, and `VERIFICATION.md` before changing the site. This is an existing portfolio, not a starter project.
