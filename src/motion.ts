@@ -11,6 +11,9 @@ const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matc
 export function scrollToTarget(target: string | number, immediate = false) {
   const element = typeof target === 'string' ? document.querySelector<HTMLElement>(target) : null;
   if (typeof target === 'string' && !element) return;
+  // Route changes can replace a short Atlas with the much taller home page
+  // before Lenis's debounced resize observer updates its scroll limit.
+  scroller?.resize();
   const offset = document.querySelector('.site-header')?.getBoundingClientRect().height ?? 90;
   const inset = element ? Math.max(offset + 14, parseFloat(getComputedStyle(element).scrollMarginTop) || 0) : 0;
   const top = typeof target === 'number' ? target : Math.max(0, element!.getBoundingClientRect().top + window.scrollY - inset);
@@ -80,17 +83,11 @@ export function usePortfolioMotion(key: string) {
             .fromTo('.hero-domain-line', { yPercent: 100, rotateX: -35 }, { yPercent: 0, rotateX: 0, stagger: .08, duration: .55, ease: 'power2.out' }, .42);
           gsap.to('.hero-scroll-progress span', { scaleX: 1, transformOrigin: 'left', ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom bottom', scrub: true } });
         }
-        const shell = document.querySelector('.gateway-shell');
-        if (shell) {
-          gsap.fromTo('.gateway', { clipPath: 'circle(8% at 50% 0%)' }, { clipPath: 'circle(155% at 50% 0%)', ease: 'none', scrollTrigger: { trigger: shell, start: 'top 94%', end: 'top 90px', scrub: .65 } });
-          gsap.fromTo('.gateway-heading h2', { x: -65, y: 35 }, { x: 0, y: 0, ease: 'none', scrollTrigger: { trigger: shell, start: 'top 80%', end: 'top 90px', scrub: .8 } });
-          gsap.to('.gateway-symbol', { y: -35, rotation: -8, ease: 'none', scrollTrigger: { trigger: shell, start: 'top 90px', end: 'bottom bottom', scrub: .8 } });
-        }
       });
       return () => { context.revert(); if (primary) { primary.inert = false; primary.removeAttribute('aria-hidden'); } if (secondary) { secondary.inert = false; secondary.removeAttribute('aria-hidden'); } };
     });
     const progress = ScrollTrigger.create({ start: 0, end: 'max', onUpdate: self => gsap.set('.reading-progress', { scaleX: self.progress, transformOrigin: 'left' }) });
-    const sections = ['home', 'journey', 'work', 'about', 'skills', 'certificates'];
+    const sections = ['home', 'journey', 'about', 'skills', 'certificates'];
     const navigation = sections.flatMap(id => {
       const element = document.getElementById(id); if (!element) return [];
       return [ScrollTrigger.create({ trigger: element, start: 'top 45%', end: 'bottom 45%', onToggle: self => {
@@ -99,7 +96,7 @@ export function usePortfolioMotion(key: string) {
         if (self.isActive) {
           link?.setAttribute('aria-current', 'location');
           document.querySelectorAll('.main-nav a').forEach(item => item.removeAttribute('aria-current'));
-          const destination = id === 'work' ? '#/projects/all' : ['skills', 'certificates'].includes(id) ? '#about' : `#${id}`;
+          const destination = ['skills', 'certificates'].includes(id) ? '#about' : `#${id}`;
           document.querySelector(`.main-nav a[href="${destination}"]`)?.setAttribute('aria-current', 'location');
         } else link?.removeAttribute('aria-current');
       } })];

@@ -14,5 +14,6 @@ import './projects.css';
 import './dossier.css';
 import './responsive.css';
 import './credentials.css';
+import './contact.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>);

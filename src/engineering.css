@@ -66,8 +66,7 @@
 .hero-domain-stage { background: var(--paper); z-index: 4; }
 .hero-domain-line { padding-block: 13px; }
 .domain-stage-heading { border-bottom-width: 2px; }
-.career-heading h2, .gateway-heading h2, .about-top h2, .toolkit-intro h2, .credential-heading h2 { font-family: 'Barlow Condensed',sans-serif; font-weight: 600; letter-spacing: -.02em; text-transform: uppercase; font-size: clamp(45px,5.2vw,78px); line-height: .96; }
-.gateway-symbol { font-family: 'Barlow Condensed',sans-serif; }
+.career-heading h2, .about-top h2, .toolkit-intro h2, .credential-heading h2 { font-family: 'Barlow Condensed',sans-serif; font-weight: 600; letter-spacing: -.02em; text-transform: uppercase; font-size: clamp(45px,5.2vw,78px); line-height: .96; }
 .perspective-word { font-family: 'Barlow Condensed',sans-serif; letter-spacing: -.02em; text-transform: uppercase; font-size: clamp(48px,5vw,74px); }
 .page-title { font-family: 'Barlow Condensed',sans-serif; text-transform: uppercase; font-weight: 600; letter-spacing: -.015em; }
 .contact h2 { font-family: 'Barlow Condensed',sans-serif; text-transform: uppercase; letter-spacing: -.02em; line-height: .94; }
@@ -180,8 +179,7 @@
   .art-field-2 { bottom: 12%; }
   .hero-domain-line > strong { font-size: 11vw; }
   .hero-proof-names { gap: 8px; }
-  .career-heading h2, .about-top h2, .credential-heading h2 { font-size: 43px; }
-  .gateway-heading h2, .toolkit-intro h2 { font-size: 49px; }
+  .career-heading h2, .about-top h2, .credential-heading h2 { font-size: 43px; }.toolkit-intro h2 { font-size: 49px; }
   .perspective-word { font-size: 49px; }
   .contact h2 { font-size: 68px; }
 }

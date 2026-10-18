@@ -1,5 +1,14 @@
 # Verification — 17 October 2026
 
+## Duplicate gateway removal and contact styling — 18 October 2026
+
+- Removed the rendered `ProjectGateway`, its CSS/sticky scroll height and GSAP choreography. Confirmed the rendered home order is Home → Experience → About → Technologies → Certificates, with five chapter links and no gateway node. Opening visuals, Atlas, dossiers, certificate assets and project facts were not changed.
+- Browser inspection at 2560 × 1320 and 1280 × 720: reviewed the light contact layout. Computed footer paper is `rgb(255,255,255)`, main text `rgb(8,8,8)` and cobalt headline `rgb(33,74,255)`. No document horizontal overflow was measured.
+- At 390 × 844: visually reviewed English/light contact, clicked Copy email and observed “Email copied”. At 320 × 740: reviewed French/dark and English/light contact. French copy confirmation was “E-mail copié”; dark paper/text/accent were `rgb(16,16,16)`, white and `rgb(154,175,255)`. No horizontal overflow was measured at either phone viewport. The narrow English heading wraps naturally over three lines.
+- Keyboard Tab from Copy email reached Download CV with a visible 2px cobalt outline. Read back both mailto targets and the unchanged French CV path. No email was sent and the CV was not edited. Back to top returned to `#home` at scroll position 0.
+- Legacy `#work` opened Project Atlas with all ten selectable rows and focus on its title. Contact from Atlas and from the Lear dossier was tested at 1280 × 720. An observed stale Lenis scroll limit initially stopped navigation in the Experience section; refreshing dimensions before programmatic scroll corrected both routes, placing the contact section below the sticky header (top ≈105px).
+- `pnpm check` and `pnpm build` passed after the final code change. No dependency changes. Existing reduced-motion CSS/GSAP conditions remain; no new animation was introduced. These are browser viewport checks, not physical iPhone/Safari or new operating-system reduced-motion tests.
+
 ## Certificate proofs and previews — 18 October 2026
 
 - Opened all ten user-supplied Coursera verification pages in the browser. They displayed Noureddine el kassi as learner and matched the supplied titles; copied issuer/date details from those pages. The web fetcher could not retrieve them, so browser-rendered public pages were used. `CREDENTIAL_SOURCES.md` records the ten exact links and dates. No sign-in was needed. The AI Fundamentals completion is 31 August 2026.
