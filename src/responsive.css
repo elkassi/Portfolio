@@ -1,0 +1,170 @@
+/* Declare body colors explicitly: browser default text preferences must not
+   override the palette inherited from :root. Inverted sections keep their colors. */
+body { color: var(--ink); background: var(--paper); }
+
+/* The same wide-screen frame and type scale across the entire portfolio.
+   Smaller desktop, tablet and phone compositions retain their existing sizing. */
+@media screen and (min-width: 1800px) {
+  :root { --wide-frame: min(2240px,calc(100% - clamp(112px,6.25vw,160px))); }
+  .wrap, .header-inner, .hero-pin, .project-lab,
+  .project-dossier > .wrap,
+  .project-dossier .dossier-opening,
+  .project-dossier .dossier-tabs,
+  .project-dossier .dossier-system > .wrap { width: var(--wide-frame); }
+
+  .section-space { padding-block: clamp(80px,4vw,104px); }
+  .section-index { font-size: 13px; margin-bottom: 30px; }
+  .career-heading, .about-top, .credential-heading { gap: 0 8%; margin-bottom: 54px; }
+  .career-heading h2, .gateway-heading h2, .about-top h2,
+  .toolkit-intro h2, .credential-heading h2 {
+    font-size: clamp(88px,4.7vw,120px);
+    max-width: 100%;
+  }
+  .career-heading p, .about-top p, .credential-heading p {
+    font-size: clamp(17px,.82vw,21px);
+    max-width: 34ch;
+  }
+  .career-story, .perspective-layout, .toolkit-layout { gap: 7%; }
+  .career-index > button { padding-block: 30px; }
+  .career-index > button > strong { font-size: clamp(31px,1.6vw,41px); }
+  .career-index > button > .mono { font-size: 12px; }
+  .career-index > button > span:not(.mono) { font-size: 14px; }
+  .career-index > button > svg { width: 23px; height: 23px; top: 32px; }
+  /* Content determines the chapter length instead of leaving an empty screen
+     beneath every internship on tall monitors. */
+  .career-chapter { min-height: 0; padding-block: 30px 96px; }
+  .career-chapter h3 { font-size: clamp(68px,3.9vw,100px); margin-top: 30px; }
+  .career-chapter h4 { font-size: clamp(18px,.9vw,23px); }
+  .career-panel-head > .small-label, .career-chapter h5 { font-size: 13px; }
+  .career-panel-head > .mono { font-size: 13px; }
+  .career-intro, .contribution-list > li { font-size: clamp(17px,.82vw,21px); max-width: 76ch; }
+  .career-intro { margin-bottom: 30px; }
+  .contribution-list > li { padding-left: 28px; margin-bottom: 15px; }
+  .contribution-list > li::before { font-size: 18px; }
+  .tags li { font-size: 13px; padding: 7px 12px; }
+  .line-link, .back-link { font-size: 15px; }
+  .line-link svg, .back-link svg { width: 21px; height: 21px; }
+  .earlier-education { font-size: 15px; }
+
+  .gateway-heading > .section-index { font-size: 13px; }
+  .gateway-heading p { font-size: clamp(17px,.82vw,21px); max-width: 38ch; }
+  .light-button { font-size: 16px; padding: 20px 26px; }
+  .light-button > span { font-size: 13px; }
+  .gateway-menu a { padding-block: 27px; gap: 25px; }
+  .gateway-menu strong { font-size: clamp(34px,1.9vw,49px); }
+  .gateway-menu a > .mono, .gateway-number { font-size: 13px; }
+  .gateway-menu svg { width: 27px; height: 27px; }
+  .gateway-preview { min-height: 155px; }
+  .gateway-preview > .mono { font-size: 12px; }
+  .preview-project-names { font-size: 18px; }
+  .gateway-symbol { font-size: 135px; }
+
+  .perspective-tabs button { font-size: clamp(19px,.95vw,24px); padding-block: 35px; }
+  .perspective-tabs button > .mono { font-size: 12px; }
+  .perspective-panel { min-height: 0; padding-block: 42px 55px; padding-right: 85px; }
+  .perspective-word { font-size: clamp(78px,4.3vw,110px); }
+  .perspective-panel p { font-size: clamp(17px,.82vw,21px); max-width: 60ch; }
+  .perspective-next { width: 55px; height: 55px; }
+  .perspective-next svg { width: 24px; height: 24px; }
+  .language-strip { margin-top: 34px; }
+  .language-strip > .small-label { font-size: 12px; }
+  .language-strip strong { font-size: 18px; }
+  .language-strip > div > span { font-size: 14px; }
+
+  .toolkit-intro p { font-size: clamp(17px,.82vw,21px); max-width: 35ch; }
+  .skill-disclosure summary { padding-block: 31px; gap: 25px; }
+  .skill-disclosure summary > .mono { font-size: 12px; }
+  .skill-disclosure h3 { font-size: clamp(26px,1.35vw,35px); }
+  .skill-detail p { font-size: clamp(17px,.82vw,21px); max-width: 75ch; }
+  .skill-detail .tags li { font-size: 14px; }
+  .skill-projects > .small-label { font-size: 12px; }
+  .skill-projects a { font-size: 15px; }
+  .skill-projects svg { width: 18px; height: 18px; }
+  .credential-row { padding-block: 32px; gap: 25px; }
+  .credential-index { font-size: 12px; }
+  .credential-row h3 { font-size: clamp(22px,1.15vw,29px); }
+  .credential-row > div > span { font-size: 16px; }
+
+  .contact { padding-bottom: 0; }
+  .contact-top > div > .small-label { font-size: 13px; }
+  .contact h2 { font-size: clamp(124px,7vw,180px); }
+  .contact-arrow { width: 140px; height: 140px; }
+  .contact-arrow svg { width: 52px; height: 52px; }
+  .contact-bottom > div > p { font-size: clamp(17px,.82vw,21px); max-width: 48ch; }
+  .contact-email > a { font-size: clamp(35px,2vw,51px); }
+  .contact-details { font-size: 16px; gap: 16px; }
+  .contact-details > a > span { font-size: 13px; }
+  .footer-baseline { font-size: 11px; }
+
+  /* Project Atlas keeps its index/preview composition at the shared width. */
+  .lab-heading { grid-template-columns: 1fr minmax(310px,400px) auto; }
+  .lab-heading .page-title { font-size: clamp(118px,6.3vw,162px); }
+  .lab-heading > p { font-size: 18px; max-width: 38ch; }
+  .lab-heading > div:first-child > .small-label, .lab-breadcrumb > .mono { font-size: 11px; }
+  .lab-total > strong { font-size: 90px; }
+  .lab-total > .mono { font-size: 10px; }
+  .lab-categories > a { font-size: 15px; padding: 15px 24px; }
+  .lab-search { max-width: 310px; }
+  .lab-search > input { font-size: 16px; }
+  .lab-directory-top { font-size: 11px; margin-block: 23px 17px; }
+  .lab-project-select { padding-block: 31px; }
+  .lab-project-name > strong { font-size: clamp(43px,2.25vw,58px); }
+  .lab-project-name > span { font-size: 12px; }
+  .lab-project-number { font-size: 11px; }
+  .lab-project-open > svg { width: 24px; height: 24px; }
+  .lab-index-foot { font-size: 10px; }
+  .stage-drawing { height: clamp(300px,15vw,385px); }
+  .stage-topline { font-size: 11px; }
+  .stage-subtitle { font-size: 15px; }
+  .stage-project-title { font-size: clamp(58px,3vw,77px); }
+  .stage-open > span { font-size: 9px; }
+  .stage-information > p { font-size: 18px; max-width: 75ch; }
+  .stage-facts .small-label { font-size: 10px; }
+  .stage-facts strong { font-size: 16px; }
+  .stage-stack > li { font-size: 13px; }
+
+  /* Dossier content, navigation and system walkthrough use the same scale. */
+  .project-dossier .dossier-hero > .page-title { font-size: clamp(148px,7.4vw,190px); }
+  .dossier-kicker, .dossier-breadcrumb > .mono { font-size: 12px; }
+  .dossier-summary { font-size: clamp(21px,1vw,26px); max-width: 55ch; }
+  .dossier-key-facts { margin-block: 32px; }
+  .dossier-key-facts dt { font-size: 11px; }
+  .dossier-key-facts dd { font-size: 16px; }
+  .dossier-hero-actions .black-button { font-size: 15px; min-height: 58px; }
+  .dossier-hero-actions .quiet-link { font-size: 15px; }
+  .dossier-visual > figcaption { font-size: 10px; }
+  .dossier-visual-reveal { height: clamp(350px,19vw,490px); }
+  .dossier-tech-strip > .mono { font-size: 11px; }
+  .dossier-tech-strip li { font-size: 17px; }
+  .dossier-tabs { gap: 45px; }
+  .dossier-tabs > button { font-size: 16px; padding-block: 25px; }
+  .dossier-tabs > button > .mono { font-size: 11px; }
+  .dossier-tabs > a { font-size: 14px; }
+  .dossier-section-label { font-size: 12px; }
+  .dossier-story-grid h2 { font-size: clamp(65px,3.5vw,90px); max-width: 100%; }
+  .dossier-story-grid p { font-size: clamp(18px,.86vw,22px); max-width: 70ch; }
+  .dossier-scope { grid-template-columns: 200px 1fr; }
+  .dossier-scope > .mono { font-size: 11px; }
+  .dossier-scope > p { font-size: 17px; max-width: 90ch; }
+  .dossier-system-heading h2 { font-size: clamp(110px,5.8vw,150px); }
+  .dossier-system-heading p { font-size: 17px; max-width: 35ch; }
+  .flow-steps strong { font-size: clamp(43px,2.25vw,58px); }
+  .flow-steps small { font-size: 11px; }
+  .flow-steps > button > .mono { font-size: 12px; }
+  .flow-scene-top { font-size: 10px; }
+  .flow-architecture { max-height: 520px; }
+  .flow-current-number { font-size: 90px; }
+  .flow-description h3 { font-size: 26px; }
+  .flow-description p, .flow-detail-points > li { font-size: 18px; }
+  .flow-description p, .flow-detail-points { max-width: 75ch; }
+  .flow-bottom > .mono { font-size: 11px; }
+  .flow-bottom > button { font-size: 15px; }
+  .dossier-contribution-heading h2 { font-size: clamp(85px,4.5vw,115px); }
+  .dossier-contribution-heading > p { font-size: 17px; max-width: 38ch; }
+  .dossier-contribution-item > p { font-size: clamp(19px,.9vw,23px); max-width: 75ch; }
+  .dossier-contribution-item > .mono { font-size: 12px; }
+  .dossier-next-project h2 { font-size: clamp(95px,4.9vw,126px); }
+  .dossier-next-project > div:first-child > .mono { font-size: 11px; }
+  .dossier-next-category, .dossier-next-bar > a:last-child, .dossier-next-open { font-size: 15px; }
+  .dossier-next-art { height: 320px; }
+}

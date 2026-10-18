@@ -12,5 +12,6 @@ import './motion.css';
 import './engineering.css';
 import './projects.css';
 import './dossier.css';
+import './responsive.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>);

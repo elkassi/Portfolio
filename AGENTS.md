@@ -1,5 +1,7 @@
 # Portfolio continuity
 
+Latest follow-up, 18 October 2026: the user requested the large-screen sizing across the whole website, including experience, About, technologies, certificates, contact, Atlas and dossiers. `src/responsive.css`, imported last, supplies the shared 1800px+ frame/type scale. Smaller layouts retain their dimensions. It also explicitly sets body foreground/background from the theme: the user's actual Chrome body computed as gray `rgb(90,88,89)` despite the root's black palette. Preserve this correction and inverted section colors. Previous live source: `0f75130`, tag `published-responsive-2026-10-18`. Publication continues at the same Site identity. QR/CV work remains deferred.
+
 Read `PROJECT_HANDOFF.md`, `CONTENT-CHECKLIST.md`, and `VERIFICATION.md` before changing the site. This is an existing portfolio, not a starter project.
 
 Latest refinement request, 18 October 2026: the user approves the phone layout but reported emoji arrows on iPhone and excessive margins/empty space in the large desktop opening and discipline stage. Decorative arrows now use SVG. Home/header refinements apply only at 1800px and above; preserve the smaller desktop/mobile composition. The previous published source is checkpoint `bc75fdb`, tag `published-portfolio-2026-10-18`. These scoped fixes update the same public Site; QR and CV work remain deferred.
