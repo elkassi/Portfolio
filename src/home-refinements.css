@@ -1,0 +1,22 @@
+/* Tint the language band while retaining the existing About composition. */
+.language-strip {
+  background: #edf1ff;
+  color: var(--ink);
+  border-inline-start: 3px solid var(--accent);
+  padding: 28px 32px;
+}
+:root[data-theme="dark"] .language-strip { background: #19213a; }
+.language-strip > div { min-width: 0; }
+
+/* Longer discipline names wrap inside the existing links and field map. */
+.art-field-1, .art-field-2 { width: clamp(132px,13vw,260px); }
+.art-field-1 { right: 2%; }
+.hero-domain-line > strong { min-width: 0; line-height: .96; }
+
+@media (max-width: 650px) {
+  .language-strip { padding: 22px 16px; }
+}
+
+@media print {
+  .contact { --paper: #fff; --ink: #080808; --accent: #080808; --rule: #bcbcbc; }
+}

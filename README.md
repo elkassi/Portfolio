@@ -40,10 +40,10 @@ pnpm preview
 - Home: a full-width introduction that transforms into a field-of-work overview as the visitor scrolls. Availability and project / experience actions remain in the opening view.
 - Experience and education: a continuous Lear / Renault / EMSI story with a sticky index, active-entry tracking, detailed responsibilities and direct navigation.
 - Project index: all documented projects, category navigation, search and individual case studies. Oracle is a certificate, not a project.
-- About: three interactive perspectives; languages.
+- About: three interactive perspectives and a tinted working-language band; English is summarized as CEFR C1.
 - Technical toolkit: expandable groups linked to relevant work.
 - Certificates and learning: proof links open directly in a new tab when real URLs or files are supplied.
-- Contact: a theme-aware white/black/cobalt closing section, email, copy action and the supplied French CV. The duplicate project gateway has been removed; the opening and header still lead to Project Atlas.
+- Contact: a cobalt closing section with white copy and a deeper-blue dark-theme variant, email, copy action and the supplied French CV. The duplicate project gateway has been removed; the opening and header still lead to Project Atlas.
 - Equivalent English / French copy, light / dark themes, keyboard navigation and reduced-motion support.
 
 ## Update content
@@ -55,7 +55,7 @@ pnpm preview
 - `src/projectIndex.ts`: category membership and localized project-date formatting.
 - `src/components/ProjectExplorer.tsx`, `ProjectBlueprint.tsx`, and `src/projects.css`: the visual project directory, concept diagrams and responsive preview behavior.
 - `src/components/ProjectDossier.tsx`, `SystemWalkthrough.tsx`, `src/caseEditorial.ts`, and `src/dossier.css`: the detail-page design and interactive workflow presentation. Representative desktop/tablet/mobile checks and scoped fixes are recorded in `VERIFICATION.md`; user approval remains pending.
-- `src/styles.css`: the base monochrome visual system and responsive content layouts. `src/contact.css` scopes the contact section to the shared theme palette.
+- `src/styles.css`: the base monochrome visual system and responsive content layouts. `src/contact.css` scopes the inverse contact palette; `src/home-refinements.css` styles the language band and longer home labels.
 - `src/motion.ts`: GSAP timelines, ScrollTrigger choreography, Lenis scrolling and page transitions.
 - `src/motion.css`: scene compositions, masks, sticky stages and responsive / reduced-motion fallbacks.
 - `src/components/ImmersiveHero.tsx`, `MotionChrome.tsx`, `AnimatedDisclosure.tsx`: the opening scene, progress / chapter navigation, and animated skill disclosures.

@@ -478,7 +478,7 @@ export const education: {
 export const languages: { name: Localized; level: Localized }[] = [
   { name: { en: 'Arabic', fr: 'Arabe' }, level: { en: 'Native', fr: 'Langue maternelle' } },
   { name: { en: 'French', fr: 'Français' }, level: { en: 'Fluent', fr: 'Courant' } },
-  { name: { en: 'English', fr: 'Anglais' }, level: { en: 'C1 · Wall Street English level 20', fr: 'C1 · Wall Street English niveau 20' } },
+  { name: { en: 'English', fr: 'Anglais' }, level: { en: 'CEFR C1', fr: 'CECRL C1' } },
 ];
 
 export type Credential = {

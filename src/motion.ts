@@ -80,7 +80,9 @@ export function usePortfolioMotion(key: string) {
           timeline.to('.hero-line-mask', { yPercent: -75, rotate: -2, stagger: .035, ease: 'none', duration: .55 }, 0)
             .to(primary, { clipPath: 'inset(0 0 100% 0)', y: -65, ease: 'none', duration: .55 }, .05)
             .fromTo(secondary, { clipPath: 'inset(100% 0 0 0)', y: 100 }, { clipPath: 'inset(0% 0 0 0)', y: 0, ease: 'power2.out', duration: .7 }, .32)
-            .fromTo('.hero-domain-line', { yPercent: 100, rotateX: -35 }, { yPercent: 0, rotateX: 0, stagger: .08, duration: .55, ease: 'power2.out' }, .42);
+            // Reset pixel translation too when language/viewport changes rebuild
+            // the timeline from a previously transformed percentage position.
+            .fromTo('.hero-domain-line', { y: 0, yPercent: 100, rotateX: -35 }, { y: 0, yPercent: 0, rotateX: 0, stagger: .08, duration: .55, ease: 'power2.out' }, .42);
           gsap.to('.hero-scroll-progress span', { scaleX: 1, transformOrigin: 'left', ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom bottom', scrub: true } });
         }
       });

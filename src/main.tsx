@@ -15,5 +15,6 @@ import './dossier.css';
 import './responsive.css';
 import './credentials.css';
 import './contact.css';
+import './home-refinements.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>);

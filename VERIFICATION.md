@@ -1,5 +1,15 @@
 # Verification — 17 October 2026
 
+## Color diversity, language level and complete field labels — 18 October 2026
+
+- Contact now uses cobalt with white copy/actions; the language band uses pale cobalt with black text. Dark mode uses deeper blue surfaces with white copy. White on the light-theme cobalt background has a calculated contrast ratio of 6.02:1; ink on the pale language band is 17.76:1.
+- The language summary reads CEFR C1 / CECRL C1. The actual certificate title, PDF, proof links and dates remain unchanged. Opening diagram labels and the large field stage share localized Industry / Artificial intelligence / Data analytics labels and the equivalent French wording.
+- Visually reviewed the English/light discipline stage at 2560 × 1320 and the French/light stage at 1280 × 720. Labels fit their rows without horizontal overflow. During language/viewport testing, residual pixel translations could hide field rows; explicit pixel and percentage positions now reset when rebuilding their existing GSAP timeline. Retested the French transition successfully, with rows reaching their visible position. Inset the graphic AI label slightly to keep its arrow inside the clipped drawing area.
+- At 390 × 844, reviewed the English/light cobalt footer and tinted language band, including CEFR C1. At 320 × 740, reviewed French/dark footer, language band, diagram labels and the longer field labels. No document, label or band horizontal overflow was measured. French CECRL C1 and the wrapped language level text remain legible.
+- Copy email showed the correct English and French confirmation. Keyboard Tab reached the CV with a visible white 2px focus outline on cobalt. Keyboard Space paused the diagram and set aria-pressed=true. The renamed French AI diagram link opened #/projects/ai with three projects. No email was sent, and CV/project facts were not edited.
+- Publication of this color/wording revision is pending specific user approval: automatic approval review rejected launching the external Site workflow. The existing public version was not changed.
+- pnpm check and pnpm build passed after the final code change; no dependency changes. Existing reduced-motion conditions remain. These were browser viewport checks, not a new physical-phone/Safari or operating-system reduced-motion test.
+
 ## Duplicate gateway removal and contact styling — 18 October 2026
 
 - Removed the rendered `ProjectGateway`, its CSS/sticky scroll height and GSAP choreography. Confirmed the rendered home order is Home → Experience → About → Technologies → Certificates, with five chapter links and no gateway node. Opening visuals, Atlas, dossiers, certificate assets and project facts were not changed.

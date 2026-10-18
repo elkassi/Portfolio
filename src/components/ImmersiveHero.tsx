@@ -8,9 +8,9 @@ function Arrow() { return <svg aria-hidden="true" width="21" height="21" viewBox
 export default function ImmersiveHero({ lang, availability, duration }: { lang: Lang; availability: string; duration: string }) {
   const copy = ui[lang];
   const groups = [
-    { category: 'industry', word: lang === 'en' ? 'INDUSTRY' : 'INDUSTRIE', id: 'lear', caption: 'Lear Corporation / Renault Tanger' },
-    { category: 'ai', word: lang === 'en' ? 'INTELLIGENCE' : 'INTELLIGENCE', id: 'texteguard', caption: 'RoBERTa / Machine learning / NLP' },
-    { category: 'data', word: 'DATA', id: 'smart-city', caption: 'Python / Power BI / SQL' },
+    { category: 'industry', word: copy.fieldIndustry, id: 'lear', caption: 'Lear Corporation / Renault Tanger' },
+    { category: 'ai', word: copy.fieldAI, id: 'texteguard', caption: 'RoBERTa / Machine learning / NLP' },
+    { category: 'data', word: copy.fieldData, id: 'smart-city', caption: 'Python / Power BI / SQL' },
   ];
   return <section className="immersive-hero" id="home"><div className="hero-pin wrap">
     <div className="hero-intro-stage"><div className="hero-content"><div className="hero-student small-label"><span className="hero-registration" aria-hidden="true">+</span>{copy.student}</div>

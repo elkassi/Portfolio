@@ -2,6 +2,7 @@ export const ui = {
   en: {
     home: 'Home', journey: 'Experience & education', projects: 'Projects', about: 'About', contact: 'Contact', menu: 'Open menu', closeMenu: 'Close menu', skip: 'Skip to content',
     student: 'Final-year engineering student · EMSI Tanger',
+    fieldIndustry: 'INDUSTRY', fieldAI: 'ARTIFICIAL INTELLIGENCE', fieldData: 'DATA ANALYTICS',
     heroLine1: 'From factory floors', heroLine2: 'to AI applications.',
     intro: 'I’m Noureddine El Kassi. I connect AI, data, and full-stack development to build useful applications.',
     intro2: 'Industrial experience at Lear Corporation and Renault Tanger. Specializing in artificial intelligence at EMSI.',
@@ -26,6 +27,7 @@ export const ui = {
   fr: {
     home: 'Accueil', journey: 'Expérience & formation', projects: 'Projets', about: 'À propos', contact: 'Contact', menu: 'Ouvrir le menu', closeMenu: 'Fermer le menu', skip: 'Aller au contenu',
     student: 'Élève-ingénieur en dernière année · EMSI Tanger',
+    fieldIndustry: 'INDUSTRIE', fieldAI: 'INTELLIGENCE ARTIFICIELLE', fieldData: 'ANALYSE DE DONNÉES',
     heroLine1: 'Du terrain industriel', heroLine2: 'aux applications IA.',
     intro: 'Je suis Noureddine El Kassi. Je relie l’IA, les données et le développement full stack pour créer des applications utiles.',
     intro2: 'Une expérience industrielle chez Lear Corporation et Renault Tanger. Une spécialisation en intelligence artificielle à l’EMSI.',

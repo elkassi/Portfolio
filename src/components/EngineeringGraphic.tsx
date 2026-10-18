@@ -1,6 +1,7 @@
 import ArrowIcon from './ArrowIcon';
 import { useEffect, useRef, useState } from 'react';
 import type { Lang } from '../content';
+import { ui } from '../copy';
 
 type Point = [number, number, number];
 type ScreenPoint = [number, number];
@@ -149,10 +150,11 @@ export default function EngineeringGraphic({ lang }: { lang: Lang }) {
     return () => { cancelAnimationFrame(frame);resize.disconnect();inView.disconnect();theme.disconnect();root.removeEventListener('pointermove',move);root.removeEventListener('pointerleave',leave);document.removeEventListener('visibilitychange',restart);motion.removeEventListener('change',restart);repaint.current=()=>{}; };
   }, []);
 
+  const copy = ui[lang];
   const fields = [
-    { id:'industry',name:lang==='en'?'INDUSTRY':'INDUSTRIE', detail:lang==='en'?'02 projects':'02 projets',stack:'Java / React' },
-    { id:'ai',name:'INTELLIGENCE',detail:lang==='en'?'03 projects':'03 projets',stack:'Python / NLP' },
-    { id:'data',name:'DATA',detail:lang==='en'?'02 projects':'02 projets',stack:'SQL / Power BI' },
+    { id:'industry',name:copy.fieldIndustry, detail:lang==='en'?'02 projects':'02 projets',stack:'Java / React' },
+    { id:'ai',name:copy.fieldAI,detail:lang==='en'?'03 projects':'03 projets',stack:'Python / NLP' },
+    { id:'data',name:copy.fieldData,detail:lang==='en'?'02 projects':'02 projets',stack:'SQL / Power BI' },
   ];
   return <div className="engineering-art" ref={container}>
     <div className="art-heading mono"><span>{lang==='en'?'CONNECTED DISCIPLINES':'DOMAINES CONNECTÉS'}</span><span aria-hidden="true">[ 01 — 03 ]</span></div>
