@@ -72,7 +72,9 @@ For a Coursera certificate, add its real verification URL to the entry’s `proo
 { title: 'Exact certificate title', issuer: 'Issuer', kind: { en: 'Certificate', fr: 'Certification' }, proof: 'THE_REAL_VERIFICATION_URL' }
 ```
 
-For a PDF, put the supplied file in `public/certificates/` and set `proof` to `/certificates/actual-file.pdf`. The complete certificate row becomes a direct link. No placeholder links are displayed.
+For a PDF, put the supplied file in `public/certificates/` and set `proof` to `/certificates/actual-file.pdf`. Certificate details open the original proof in a new tab. An optional `preview: { src, width, height }` uses a real local certificate image; its thumbnail opens an accessible dialog with an original-proof action. Add `proofType: 'coursera' | 'pdf'` and a confirmed ISO `date` for localized labels/dates. Preserve official course titles. No placeholder links or generated certificate images are displayed.
+
+The user supplied ten Coursera proof links and the Wall Street English CEFR C1 PDF on 18 October 2026. All eleven now have previews/proofs. The PDF confirms Level 20 Mastery on 24 April 2026; the prior 2025 certificate date is superseded. Oracle remains without proof until supplied. Its existing entry is retained.
 
 ### Real project images
 

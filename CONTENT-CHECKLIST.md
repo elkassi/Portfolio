@@ -21,8 +21,9 @@ Oracle is **a certificate obtained in 2026**, not a project. It appears only in 
 
 ## Needed from the user
 
-- [ ] Coursera verification / shareable certificate URLs, or the certificate PDFs. The whole certificate entry will open the actual proof directly.
-- [ ] Wall Street English Level 20 PDF; Oracle certificate PDF / verification URL and exact title. Oracle is currently labeled using the supplied CV title.
+- [x] Ten Coursera verification URLs supplied on 18 October 2026. Public course pages identify the user and confirm titles, issuers and dates. Certificate details open the proof; thumbnails open local previews.
+- [x] Wall Street English Level 20 / CEFR C1 two-page diploma PDF supplied. Its date is **24 April 2026**, replacing the prior 2025 entry. Public PDF bytes match the supplied document; the preview shows its first page.
+- [ ] Oracle certificate PDF / verification URL and exact title. Oracle is currently labeled using the supplied CV title, with no proof link or invented preview.
 - [ ] Real project screenshots, reports or source repositories. Current case presentations use clearly labeled concept diagrams; genuine screenshots can be added through `screenshots`. Generated covers have been removed.
 - [ ] Actual GitHub / LinkedIn profile links and any demo links.
 - [ ] Approved English CV. The supplied French CV is already downloadable.

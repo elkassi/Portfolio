@@ -1,6 +1,6 @@
 import ArrowIcon from './components/ArrowIcon';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { education, languages, learning, profile, projects, skillGroups } from './content';
+import { education, languages, profile, projects, skillGroups } from './content';
 import type { Lang } from './content';
 import { career, perspectives } from './experience';
 import { ui } from './copy';
@@ -9,6 +9,7 @@ import MotionChrome from './components/MotionChrome';
 import AnimatedDisclosure from './components/AnimatedDisclosure';
 import ProjectExplorer from './components/ProjectExplorer';
 import ProjectDossier from './components/ProjectDossier';
+import Credentials from './components/Credentials';
 import { categories, categoryById } from './projectIndex';
 import type { Filter } from './projectIndex';
 import { scrollToTarget, usePortfolioMotion, useSmoothScroll } from './motion';
@@ -58,7 +59,6 @@ function About({ lang }: { lang: Lang }) {
 
 function Skills({ lang }: { lang: Lang }) { const copy = ui[lang]; return <section className="toolkit section-space" id="skills"><div className="wrap toolkit-layout"><div className="toolkit-intro reveal"><h2>{copy.toolkit}</h2><p>{copy.toolkitIntro}</p></div><div className="toolkit-groups reveal">{skillGroups.map((group, i) => <AnimatedDisclosure key={group.title.en} title={group.title[lang]} index={i} initialOpen={i === 0}><div className="skill-detail"><p>{group.context[lang]}</p><Tags items={group.skills}/><div className="skill-projects"><span className="small-label">{copy.related}</span>{group.projectIds.map(id => { const project = projects.find(item => item.id === id); return project ? <a key={id} href={caseHref(id)}>{project.title[lang]}<Arrow diagonal/></a> : null; })}</div></div></AnimatedDisclosure>)}</div></div></section>; }
 
-function Credentials({ lang }: { lang: Lang }) { const copy = ui[lang]; return <section className="credentials section-space" id="certificates"><div className="wrap"><div className="credential-heading reveal"><span className="section-index mono">Coursera / Oracle / Wall Street English</span><h2>{copy.credentials}</h2><p>{copy.credentialsBody}</p></div><div className="credential-list reveal">{learning.map((item, i) => { const content = <><span className="credential-index mono">{String(i + 1).padStart(2, '0')}</span><div><h3>{item.title}</h3><span>{item.issuer}</span></div>{item.proof && <span className="credential-proof">{copy.proof}<Arrow diagonal/></span>}</>; return item.proof ? <a className="credential-row has-proof" key={item.title} href={item.proof} target="_blank" rel="noreferrer">{content}</a> : <article className="credential-row" key={item.title}>{content}</article>; })}</div></div></section>; }
 
 export default function App() {
   const [lang, setLang] = useState<Lang>(() => preference('nek-language', 'en') === 'fr' ? 'fr' : 'en');

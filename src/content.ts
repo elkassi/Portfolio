@@ -481,14 +481,39 @@ export const languages: { name: Localized; level: Localized }[] = [
   { name: { en: 'English', fr: 'Anglais' }, level: { en: 'C1 · Wall Street English level 20', fr: 'C1 · Wall Street English niveau 20' } },
 ];
 
-/** CV-listed learning. Certificates and credential links have not been supplied. */
-export const learning: { title: string; issuer: string; kind: Localized; year?: string; proof?: string }[] = [
+export type Credential = {
+  title: string;
+  issuer: string;
+  kind: Localized;
+  year?: string;
+  date?: string;
+  proof?: string;
+  proofType?: 'coursera' | 'pdf';
+  preview?: { src: string; width: number; height: number };
+};
+
+function courseraCredential(id: string, title: string, issuer: string, date: string): Credential {
+  return { title, issuer, date, kind: { en: 'Course certificate', fr: 'Certificat de cours' },
+    proof: `https://www.coursera.org/account/accomplishments/verify/${id}`, proofType: 'coursera',
+    preview: { src: `/certificates/${id.toLowerCase()}.webp`, width: 1772, height: 928 } };
+}
+
+/** Supplied proofs; titles, issuers and dates checked against the public pages/PDF. */
+export const learning: Credential[] = [
   { title: 'Oracle Database Administration 19', issuer: 'Oracle', kind: { en: 'Certificate', fr: 'Certification' }, year: '2026' },
-  { title: 'Introduction to Machine Learning', issuer: 'Duke University', kind: { en: 'CV-listed course', fr: 'Cours mentionné dans le CV' } },
-  { title: 'Introduction to Big Data', issuer: 'University of California San Diego', kind: { en: 'CV-listed course', fr: 'Cours mentionné dans le CV' } },
-  { title: 'Introduction to NoSQL Databases', issuer: 'IBM', kind: { en: 'CV-listed course', fr: 'Cours mentionné dans le CV' } },
-  { title: 'Agile Project Management', issuer: 'Google', kind: { en: 'CV-listed course', fr: 'Cours mentionné dans le CV' } },
-  { title: 'Level 20 Mastery', issuer: 'Wall Street English', kind: { en: 'CV-listed language learning', fr: 'Formation linguistique mentionnée dans le CV' }, year: '2025' },
+  courseraCredential('83X3ME4JRW60', 'AI Fundamentals', 'Google', '2026-08-31'),
+  { title: 'Level 20 Mastery', issuer: 'Wall Street English', kind: { en: 'CEFR C1 diploma', fr: 'Diplôme CECRL C1' }, date: '2026-04-24',
+    proof: '/certificates/noureddine-el-kassi-cefr-c1.pdf', proofType: 'pdf',
+    preview: { src: '/certificates/wall-street-english-c1.webp', width: 1500, height: 1081 } },
+  courseraCredential('UXWKESF659ZR', 'Agile Project Management', 'Google', '2026-04-15'),
+  courseraCredential('Y7XP3ZOV0XWR', 'Introduction to Big Data', 'University of California San Diego', '2026-04-01'),
+  courseraCredential('TTOES1HYG0AH', 'Introduction to Machine Learning', 'Duke University', '2025-12-25'),
+  courseraCredential('9EPOUZ9DNYQZ', 'Introduction to NoSQL Databases', 'IBM', '2025-12-25'),
+  courseraCredential('NNNHVIX8ICO1', 'Software Engineering: Software Design and Project Management', 'The Hong Kong University of Science and Technology', '2025-03-14'),
+  courseraCredential('ZU54BWIN21YI', 'Using Python to Access Web Data', 'University of Michigan', '2025-03-06'),
+  courseraCredential('GS3AOUU0KPZ5', 'Programming for Everybody (Getting Started with Python)', 'University of Michigan', '2025-01-10'),
+  courseraCredential('ACTDSPF7YPT9', 'Interactivity with JavaScript', 'University of Michigan', '2024-11-27'),
+  courseraCredential('3LFX6UMCXRH1', 'Introduction à la programmation orientée objet (en C++)', 'École Polytechnique Fédérale de Lausanne', '2024-11-27'),
 ];
 
 /** Internal editorial checklist. Do not render this as public portfolio content. */
@@ -505,7 +530,7 @@ export const missingInformation: { id: string; detail: string }[] = [
   { id: 'power-bi-details', detail: 'Supply Power BI screenshots, data source/model, actual measures, and precise personal contribution beyond project leadership. Date confirmed as June 2026.' },
   { id: 'opencv-details', detail: 'AI Presence is the user-confirmed title for the OpenCV project. Confirm language, processing methods, inputs/outputs, personal contribution, and results. Date confirmed as May 2026.' },
   { id: 'arduino-details', detail: 'Confirm the robotics personal contribution and which line-following, obstacle-avoidance, or follow-me modes were implemented and tested. Date confirmed as June 2024. No completed mode is currently claimed.' },
-  { id: 'credentials', detail: 'Supply certificate documents, exact titles, dates, and credential links for CV-listed courses, Oracle training, the unspecified August 2026 Coursera certificate, and Wall Street English Level 20. None is presented as a verified certificate.' },
+  { id: 'credentials', detail: 'Ten Coursera verification URLs and the Wall Street English CEFR C1 PDF are supplied. Public pages confirm the course details; the August 2026 course is AI Fundamentals. The PDF dates Level 20 Mastery to 24 April 2026, superseding the prior 2025 entry. Oracle still needs its certificate PDF/verification URL and exact official title; no proof link is invented.' },
   { id: 'education-history', detail: 'Confirm dates and any qualification for earlier economics studies. No economics degree is inferred or published.' },
   { id: 'academic-marks', detail: 'Provide evidence and precise context for optional semester/module marks before adding them. No overall degree GPA is inferred.' },
   { id: 'additional-work', detail: 'Supply documentation for any additional NLP, RAG, generative-AI, or diffusion coursework before adding public entries.' },
