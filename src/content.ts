@@ -3,6 +3,8 @@
  * Update availability and missingInformation here as new evidence arrives.
  * Empty dates, contributions and URLs are intentional: do not fabricate them.
  */
+import { publicAsset } from './assets';
+
 export type Lang = 'en' | 'fr';
 export type Localized = { en: string; fr: string };
 export type Category = 'ai' | 'data' | 'software' | 'exploration';
@@ -42,7 +44,7 @@ export const profile = {
     en: 'I study Computer Science and Networks at EMSI Tanger, specializing in artificial intelligence. My projects connect NLP, data analysis, and software development with practical applications. Internships at Lear Corporation and Renault Tanger have also brought me into automotive manufacturing, where software has to work within real operational constraints.',
     fr: 'Étudiant en informatique et réseaux à l’EMSI Tanger, je me spécialise en intelligence artificielle. Mes projets relient le NLP, l’analyse de données et le développement logiciel à des usages concrets. Mes stages chez Lear Corporation et Renault Tanger m’ont aussi permis de découvrir l’industrie automobile et ses contraintes opérationnelles.',
   },
-  cv: { fr: '/cv/noureddine-el-kassi-fr.pdf' } as { fr: string; en?: string },
+  cv: { fr: publicAsset('/cv/noureddine-el-kassi-fr.pdf') } as { fr: string; en?: string },
   availability: {
     start: '2027-02',
     duration: { en: '4–6 months', fr: '4 à 6 mois' },
@@ -495,7 +497,7 @@ export type Credential = {
 function courseraCredential(id: string, title: string, issuer: string, date: string): Credential {
   return { title, issuer, date, kind: { en: 'Course certificate', fr: 'Certificat de cours' },
     proof: `https://www.coursera.org/account/accomplishments/verify/${id}`, proofType: 'coursera',
-    preview: { src: `/certificates/${id.toLowerCase()}.webp`, width: 1772, height: 928 } };
+    preview: { src: publicAsset(`/certificates/${id.toLowerCase()}.webp`), width: 1772, height: 928 } };
 }
 
 /** Supplied proofs; titles, issuers and dates checked against the public pages/PDF. */
@@ -503,8 +505,8 @@ export const learning: Credential[] = [
   { title: 'Oracle Database Administration 19', issuer: 'Oracle', kind: { en: 'Certificate', fr: 'Certification' }, year: '2026' },
   courseraCredential('83X3ME4JRW60', 'AI Fundamentals', 'Google', '2026-08-31'),
   { title: 'Level 20 Mastery', issuer: 'Wall Street English', kind: { en: 'CEFR C1 diploma', fr: 'Diplôme CECRL C1' }, date: '2026-04-24',
-    proof: '/certificates/noureddine-el-kassi-cefr-c1.pdf', proofType: 'pdf',
-    preview: { src: '/certificates/wall-street-english-c1.webp', width: 1500, height: 1081 } },
+    proof: publicAsset('/certificates/noureddine-el-kassi-cefr-c1.pdf'), proofType: 'pdf',
+    preview: { src: publicAsset('/certificates/wall-street-english-c1.webp'), width: 1500, height: 1081 } },
   courseraCredential('UXWKESF659ZR', 'Agile Project Management', 'Google', '2026-04-15'),
   courseraCredential('Y7XP3ZOV0XWR', 'Introduction to Big Data', 'University of California San Diego', '2026-04-01'),
   courseraCredential('TTOES1HYG0AH', 'Introduction to Machine Learning', 'Duke University', '2025-12-25'),

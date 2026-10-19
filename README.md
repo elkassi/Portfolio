@@ -1,5 +1,7 @@
 # Noureddine El Kassi — portfolio
 
+GitHub Pages publishing is configured at **https://elkassi.github.io/Portfolio/** using `.github/workflows/deploy-pages.yml`. See `DEPLOYMENT.md` for the current workflow and retained previous-hosting information. Analytics is awaiting the user's Measurement ID; it is not active yet.
+
 A bilingual React / TypeScript portfolio using Vite and Tailwind CSS. Permanent hosting is configured through Sites; see [DEPLOYMENT.md](DEPLOYMENT.md) for the address and publication workflow.
 
 Source repository: [elkassi/Portfolio](https://github.com/elkassi/Portfolio). The source preserves the existing approved home, project explorer and project-detail revision. The user explicitly requested public hosting on 17 October 2026. Earlier statements about no deployment describe historical revisions.

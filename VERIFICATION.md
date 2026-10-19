@@ -208,3 +208,10 @@ No public deployment was performed.
 - No source redesign was performed during migration. GitHub contains source/assets/configuration; generated output and raw local conversations are excluded. The separate private backup retains the original project and references.
 - A clean migration-checkout install with `pnpm install --frozen-lockfile` passed. The lockfile was not changed. One existing whitespace-only blank line in `src/content.ts` was cleaned for `git diff --check`; project content and behavior were unchanged.
 - The clean migration checkout also passed `pnpm check` and `pnpm build`. Its CSS output was 104.73 kB (20.44 kB gzip); JavaScript was 469.65 kB (154.68 kB gzip). All original source/assets/configuration were compared with the original copy, allowing only the documented whitespace cleanup. A staged-file secret-pattern scan and forbidden-path check found no matches across 52 files; the supplied public CV/contact content was intentionally retained.
+
+## GitHub Pages migration — 19 October 2026
+- TypeScript check and production build passed with /Portfolio/ base.
+- Built HTML uses the GitHub canonical/social URL and correct asset paths.
+- Local production preview: home, Atlas header navigation, keyboard opening action, Lear dossier and AI certificate modal checked. CV and certificate URLs retain the deployment base.
+- Publication and live verification recorded after deployment below. Analytics remains pending the user's Measurement ID.
+

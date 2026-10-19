@@ -1,5 +1,21 @@
 # Portfolio hosting
 
+## Primary hosting: GitHub Pages — 19 October 2026
+
+The user explicitly requested moving the existing portfolio to GitHub Pages. The configured public address is **https://elkassi.github.io/Portfolio/**. The prior Sites deployment remains available during migration; its identity is retained below for recovery. The approved layout, project facts, CV bytes and certificate assets are unchanged.
+
+`.github/workflows/deploy-pages.yml` builds and publishes on pushes to `main` and supports manual runs from Actions. Repository Settings → Pages uses **GitHub Actions**. The workflow pins its actions, uses Node 24 and pnpm 11.25.0, installs with the existing frozen lockfile, type-checks, builds `dist`, and publishes the static artifact. The deploy job alone receives Pages write/OIDC permissions. No deployment secret or personal access token is stored in the project.
+
+The Pages build sets `PORTFOLIO_BASE_PATH=/Portfolio/` and `PORTFOLIO_SITE_URL=https://elkassi.github.io/Portfolio/`. Vite prefixes built scripts/styles/favicon; `src/assets.ts` prefixes local CV/certificate URLs with `import.meta.env.BASE_URL`. New public-file references in structured content should use `publicAsset('/path/to/file')`. Hash routes remain directly accessible under the repository path.
+
+Local development retains the root base by default. To preview a Pages build, set the same base environment variable for both build and preview. Site metadata is injected by Vite using `PORTFOLIO_SITE_URL`; root-hosted builds can override both values without a source rewrite.
+
+Google Analytics is not activated yet. The user will create the web stream after receiving the verified GitHub Pages address, then supply its public Measurement ID. Do not invent an ID or claim visitor/click/download tracking is active. QR generation and CV edits remain deferred.
+
+Pre-migration checkpoint: local tag `before-github-pages-2026-10-19` at `9198488`. Verify the first Actions deployment and actual public assets before reporting the migration as complete.
+
+## Previous hosting: Sites
+
 The user requested a permanent public portfolio on 17 October 2026. Version 1 was successfully published on 18 October 2026. The live address is:
 
 https://noureddine-el-kassi.peppyzebra32.chatgpt.site/
