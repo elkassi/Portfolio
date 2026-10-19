@@ -215,3 +215,7 @@ No public deployment was performed.
 - Local production preview: home, Atlas header navigation, keyboard opening action, Lear dossier and AI certificate modal checked. CV and certificate URLs retain the deployment base.
 - Publication and live verification recorded after deployment below. Analytics remains pending the user's Measurement ID.
 
+- Live deployment confirmed: GitHub Actions run 39229869295 completed successfully (build and deploy), publishing a6b3c5d at https://elkassi.github.io/Portfolio/.
+- Live home, opening project link, Atlas, Lear dossier and AI Fundamentals modal verified in Chrome. Main JS/CSS/favicon returned HTTP 200. CV, WSE proof PDF and AI certificate preview returned HTTP 200 and SHA-256 matched the originals.
+- Live screenshot saved outside source checkout: ../github-pages-live.png. No analytics collection is enabled yet.
+
