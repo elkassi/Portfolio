@@ -45,6 +45,7 @@ pnpm preview
 - Certificates and learning: proof links open directly in a new tab when real URLs or files are supplied.
 - Contact: a cobalt closing section with white copy and a deeper-blue dark-theme variant, email, copy action and the supplied French CV. The duplicate project gateway has been removed; the opening and header still lead to Project Atlas.
 - Equivalent English / French copy, light / dark themes, keyboard navigation and reduced-motion support.
+- Approved Editorial header with cobalt lettering on hover/focus, Signature cut home actions, and compact SVG action links. Styles are scoped in `src/navigation.css`; symbols live in `src/components/ActionIcon.tsx`. The mobile menu includes Contact.
 
 ## Update content
 
@@ -100,7 +101,7 @@ The opening uses Barlow Condensed display typography, black text, a cobalt accen
 
 ## Visual project explorer
 
-The full collection contains ten projects in five disciplines. On desktop, hovering or focusing a row updates a sticky preview; clicking the row also selects it. Each row's diagonal arrow and the preview's open action lead directly to the case study. On mobile, tapping a row reveals its preview inline and places the heading below the sticky category controls. Search combines with the selected category. Clearing search or changing category selects the first matching project.
+The full collection contains ten projects in five disciplines. On desktop, hovering or focusing a row updates a sticky preview; clicking the row also selects it. Each row's folder symbol and the preview's compact open action lead directly to the case study. On mobile, tapping a row reveals its preview inline and places the heading below the sticky category controls. Search combines with the selected category. Clearing search or changing category selects the first matching project.
 
 Every project has a distinct SVG concept diagram based on supplied project facts. These diagrams are not product screenshots, measured results or live dashboards. Motion includes signal paths, a gentle drawing drift, pointer response and a masked transition between previews. A shared pause control stops the SVG animations; offscreen previews pause, and reduced-motion preferences disable the animations. The front-page composition remains in `ImmersiveHero.tsx` and `EngineeringGraphic.tsx`.
 

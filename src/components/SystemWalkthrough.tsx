@@ -1,4 +1,4 @@
-import ArrowIcon from './ArrowIcon';
+import ActionIcon from './ActionIcon';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import type { Lang, Project } from '../content';
@@ -54,12 +54,12 @@ export default function SystemWalkthrough({project,lang,labels,paused,onPause}:{
       else if(['ArrowUp','ArrowLeft'].includes(event.key))next=(active+count-1)%count;
       else if(event.key==='Home')next=0;else if(event.key==='End')next=count-1;else return;
       event.preventDefault();setActive(next);document.getElementById(`system-step-${next}`)?.focus({preventScroll:true});
-    }}>{project.workflow.map((_,i)=><button className={active===i?'is-active':''} key={i} role="tab" id={`system-step-${i}`} aria-controls="system-step-panel" aria-selected={active===i} tabIndex={active===i?0:-1} onClick={()=>setActive(i)}><span className="mono">0{i+1}</span><span><strong>{labels[i]?.title[lang]??`${en?'Step':'Étape'} ${i+1}`}</strong><small>{tech(i)}</small></span><span className="flow-step-arrow" aria-hidden="true"><ArrowIcon direction="up-right"/></span></button>)}</div>
+    }}>{project.workflow.map((_,i)=><button className={active===i?'is-active':''} key={i} role="tab" id={`system-step-${i}`} aria-controls="system-step-panel" aria-selected={active===i} tabIndex={active===i?0:-1} onClick={()=>setActive(i)}><span className="mono">0{i+1}</span><span><strong>{labels[i]?.title[lang]??`${en?'Step':'Étape'} ${i+1}`}</strong><small>{tech(i)}</small></span><span className="flow-step-arrow" aria-hidden="true"><ActionIcon kind="check"/></span></button>)}</div>
     <div className="flow-scene">
       <div className="flow-scene-top mono"><span>{en?'FOLLOW THE SYSTEM':'SUIVRE LE SYSTÈME'}</span><span>{en?'CONCEPT WALKTHROUGH':'PARCOURS DE PRINCIPE'}</span><button className="dossier-motion-toggle" aria-pressed={paused} onClick={onPause} aria-label={paused?(en?'Resume diagram animations':'Reprendre les animations'):(en?'Pause diagram animations':'Mettre les animations en pause')}><svg viewBox="0 0 20 20" aria-hidden="true"><path d={paused?'m7 5 8 5-8 5Z':'M7 5v10M13 5v10'}/></svg></button></div>
       <WalkthroughDiagram id={project.id} active={active} lang={lang} count={count} labels={project.workflow.map((_,i)=>tech(i).split(' / ')[0]||`${en?'STEP':'ÉTAPE'} ${i+1}`)} focusRef={focus}/>
       <div className="flow-description" role="tabpanel" id="system-step-panel" aria-labelledby={`system-step-${active}`} tabIndex={0} aria-live="polite" aria-atomic="true"><span className="flow-current-number" aria-hidden="true">0{active+1}</span><div className="flow-description-inner" key={active}><h3>{labels[active]?.title[lang]??`${en?'Step':'Étape'} ${active+1}`}</h3><p>{project.workflow[active]?.[lang]}</p>{notes.length>0&&<ul className="flow-detail-points">{notes.map((note,i)=><li key={i}>{note[lang]}</li>)}</ul>}</div></div>
-      <div className="flow-bottom"><span className="mono">0{active+1} / {String(count).padStart(2,'0')}</span><div className="flow-position" aria-hidden="true">{project.workflow.map((_,i)=><span key={i} className={i<=active?'is-complete':''}/>)}</div><button onClick={()=>setActive((active+1)%count)}>{active===count-1?(en?'Start again':'Recommencer'):(en?'Next step':'Étape suivante')}<span aria-hidden="true"><ArrowIcon direction="right"/></span></button></div>
+      <div className="flow-bottom"><span className="mono">0{active+1} / {String(count).padStart(2,'0')}</span><div className="flow-position" aria-hidden="true">{project.workflow.map((_,i)=><span key={i} className={i<=active?'is-complete':''}/>)}</div><button onClick={()=>setActive((active+1)%count)}>{active===count-1?(en?'Start again':'Recommencer'):(en?'Next step':'Étape suivante')}<span aria-hidden="true"><ActionIcon kind={active===count-1?'restart':'next'}/></span></button></div>
     </div>
   </div>;
 }

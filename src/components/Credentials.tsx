@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { learning } from '../content';
 import type { Credential, Lang } from '../content';
 import { ui } from '../copy';
-import ArrowIcon from './ArrowIcon';
+import ActionIcon from './ActionIcon';
 
 function credentialDate(item: Credential, lang: Lang) {
   return item.date ? new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : 'fr-FR', {
@@ -28,7 +28,7 @@ export default function Credentials({ lang }: { lang: Lang }) {
         <span className="credential-meta mono"><span>{String(index + 1).padStart(2, '0')}</span><time dateTime={item.date ?? item.year}>{credentialDate(item, lang)}</time></span>
         <h3>{item.title}</h3><span className="credential-issuer">{item.issuer}</span>
         <span className="credential-kind">{item.kind[lang]}</span>
-        {item.proof && <span className="credential-proof">{proofLabel(item)}<ArrowIcon/></span>}
+        {item.proof && <span className="credential-proof">{proofLabel(item)}<ActionIcon kind="certificate"/></span>}
       </>;
       return <article className={`credential-row${item.preview ? ' has-preview' : ''}${item.proof ? ' has-proof' : ''}`} key={item.title}>
         {item.preview && <button type="button" className="credential-thumbnail" onClick={() => setSelected(item)} aria-label={`${copy.certificatePreview}: ${item.title}`} aria-haspopup="dialog">
@@ -51,7 +51,7 @@ export default function Credentials({ lang }: { lang: Lang }) {
         <button type="button" autoFocus className="credential-close" onClick={() => dialog.current?.close()}>{copy.closeCertificate}<svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
       </header>
       {selected.preview && <img className="credential-full-image" src={selected.preview.src} width={selected.preview.width} height={selected.preview.height} alt={`${copy.certificateImage} — ${selected.title}`}/>}
-      <a className="black-button credential-original" href={selected.proof} target="_blank" rel="noopener noreferrer">{proofLabel(selected)}<ArrowIcon/><span className="credential-sr-only">({copy.opensNewTab})</span></a>
+      <a className="black-button credential-original" href={selected.proof} target="_blank" rel="noopener noreferrer">{proofLabel(selected)}<ActionIcon kind="certificate"/><span className="credential-sr-only">({copy.opensNewTab})</span></a>
     </div>}
   </dialog></section>;
 }

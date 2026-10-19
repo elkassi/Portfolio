@@ -1,6 +1,6 @@
 export const ui = {
   en: {
-    home: 'Home', journey: 'Experience & education', projects: 'Projects', about: 'About', contact: 'Contact', menu: 'Open menu', closeMenu: 'Close menu', skip: 'Skip to content',
+    home: 'Home', navExperience: 'Experience', journey: 'Experience & education', projects: 'Projects', about: 'About', contact: 'Contact', menu: 'Open menu', closeMenu: 'Close menu', skip: 'Skip to content',
     student: 'Final-year engineering student · EMSI Tanger',
     fieldIndustry: 'INDUSTRY', fieldAI: 'ARTIFICIAL INTELLIGENCE', fieldData: 'DATA ANALYTICS',
     heroLine1: 'From factory floors', heroLine2: 'to AI applications.',
@@ -25,7 +25,7 @@ export const ui = {
     dark: 'Switch to dark theme', light: 'Switch to light theme', notFound: 'This project could not be found.', repository: 'Source code', demo: 'Live demo', more: 'Read more', less: 'Read less', date: 'Date', projectType: 'Project type', reveal: 'Reveal the next perspective', copyright: 'Noureddine El Kassi',
   },
   fr: {
-    home: 'Accueil', journey: 'Expérience & formation', projects: 'Projets', about: 'À propos', contact: 'Contact', menu: 'Ouvrir le menu', closeMenu: 'Fermer le menu', skip: 'Aller au contenu',
+    home: 'Accueil', navExperience: 'Expérience', journey: 'Expérience & formation', projects: 'Projets', about: 'À propos', contact: 'Contact', menu: 'Ouvrir le menu', closeMenu: 'Fermer le menu', skip: 'Aller au contenu',
     student: 'Élève-ingénieur en dernière année · EMSI Tanger',
     fieldIndustry: 'INDUSTRIE', fieldAI: 'INTELLIGENCE ARTIFICIELLE', fieldData: 'ANALYSE DE DONNÉES',
     heroLine1: 'Du terrain industriel', heroLine2: 'aux applications IA.',
