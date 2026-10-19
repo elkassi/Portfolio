@@ -29,4 +29,3 @@ After approved changes, run `pnpm check` and `pnpm build`. Use the Sites source 
 Representative responsive checks and remaining limits are recorded in `VERIFICATION.md`. Continue to test the actual deployed site on phones before final CV delivery. The user's large monitor is 2560 × 1440; browser zoom and usable CSS viewport also affect the layout.
 
 The latest user instruction is to finish the website and deployment before creating a QR code or editing the CV. The supplied CV is unchanged. When that later step is requested, use the final stable address; regular website updates at the same address do not require a different QR code. If a custom domain is selected, establish it before printing the final CV.
-

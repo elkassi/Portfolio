@@ -32,4 +32,3 @@ Latest user feedback, 17 October 2026: the current site, dossier composition and
 - On 17 October 2026, the user explicitly requested a permanent public deployment for future recruiter/CV access. Continue the Sites project in `.openai/hosting.json`; preserve its identity and approved design. Keep later unapproved revisions available for review. The user's latest correction is 2560 × 1440 for the large monitor. Finish the website and deployment first; QR creation and CV edits are deferred until the user is ready.
 
 Analytics update, 19 October 2026: the user supplied G-96SJSJ73X8. src/analytics.ts enables the Google tag only on the public GitHub production hostname, with custom route, navigation, CV-link and contact events. Preserve the approved design; see DEPLOYMENT.md for event semantics. The earlier analytics deferral is superseded. Checkpoint before analytics: before-analytics-2026-10-19.
-

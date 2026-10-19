@@ -225,3 +225,6 @@ No public deployment was performed.
 - Isolated runtime checks passed for single tag initialization, route-event deduplication, project/category/CV/contact/navigation events, exclusion of email from custom payloads, and localhost exclusion.
 - Public deployment/Google receipt verification follows publication; do not equate build success with data appearing in Analytics.
 
+- GitHub Actions run 39230879537 succeeded (build and deploy), publishing 10c842e. Live HTML references the new bundle; the served bundle contains G-96SJSJ73X8 and the live DOM includes the matching Google tag script.
+- Google Analytics stream 16157765221 matches the portfolio URL and supplied ID, with enhanced measurement enabled. At verification time Realtime still showed zero users and the stream had not reported data received. Google receipt is not yet confirmed; the installation panel did not load its tag test. Do not claim confirmed incoming Analytics events based only on the deployed tag.
+
