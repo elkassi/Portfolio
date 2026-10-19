@@ -1,4 +1,5 @@
 import ActionIcon from './components/ActionIcon';
+import { trackEvent, trackRoute } from './analytics';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { education, languages, profile, projects, skillGroups } from './content';
 import type { Lang } from './content';
@@ -63,6 +64,9 @@ export default function App() {
   const availability = `${lang === 'en' ? 'PFE internship' : 'Stage PFE'} · ${month}`;
   useSmoothScroll();
   usePortfolioMotion(`${routeKey}-${lang}`);
+  useEffect(() => {
+    trackRoute(route.page === 'home' ? `home:${route.section}` : route.page === 'projects' ? `projects:${route.filter}` : `project:${route.id}`, lang);
+  }, [route, lang]);
   const previousRoute = useRef<Route | null>(null);
   useEffect(() => {
     const update = () => {
@@ -92,7 +96,7 @@ export default function App() {
   }, [route]);
   useEffect(() => { if (!menuOpen) return; const escape = (event: globalThis.KeyboardEvent) => { if (event.key === 'Escape') { setMenuOpen(false); menuRef.current?.focus(); } }; window.addEventListener('keydown', escape); return () => window.removeEventListener('keydown', escape); }, [menuOpen]);
   useEffect(() => () => clearTimeout(copyTimer.current), []);
-  async function copyEmail() { try { await navigator.clipboard.writeText(profile.email); setCopied(copy.copied); } catch { setCopied(copy.copyFail); } clearTimeout(copyTimer.current); copyTimer.current = setTimeout(() => setCopied(''), 4000); }
+  async function copyEmail() { try { await navigator.clipboard.writeText(profile.email); setCopied(copy.copied); trackEvent('contact_click', { contact_method: 'copy_email' }); } catch { setCopied(copy.copyFail); } clearTimeout(copyTimer.current); copyTimer.current = setTimeout(() => setCopied(''), 4000); }
   const nav = [{ href: '#home', label: copy.home }, { href: '#journey', label: copy.navExperience }, { href: indexHref(), label: copy.projects }, { href: '#about', label: copy.about }];
   return <><MotionChrome lang={lang} home={route.page === 'home'}/><a className="skip-link" href="#main" onClick={event => { event.preventDefault(); const main = document.getElementById('main'); main?.setAttribute('tabindex', '-1'); main?.focus(); main?.scrollIntoView(); }}>{copy.skip}</a><header className="site-header"><div className="header-inner"><a href="#home" className="name-wordmark" aria-label={`Noureddine El Kassi — ${copy.home}`}><svg className="identity-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40"/><path className="mark-letter" d="M10 29V11l20 18V11" fill="none" strokeWidth="2"/><path className="mark-accent" d="M6 34 34 6" fill="none" strokeWidth="2.5"/></svg><span className="identity-name">Noureddine El Kassi<small>{lang === 'en' ? 'Engineering portfolio' : 'Portfolio ingénieur'}</small></span></a><nav className={menuOpen ? 'main-nav is-open' : 'main-nav'} id="main-navigation" aria-label={lang === 'en' ? 'Main navigation' : 'Navigation principale'}>{nav.map(item => <a href={item.href} key={item.href} aria-label={item.href === '#journey' ? copy.journey : item.label} aria-current={(route.page !== 'home' && item.href === indexHref()) || (route.page === 'home' && item.href === `#${route.section}`) ? 'page' : undefined} onClick={() => setMenuOpen(false)}><span className="nav-label-window" aria-hidden="true"><span className="nav-label-base">{item.label}</span><span className="nav-label-hover">{item.label}</span></span></a>)}<a className="mobile-contact" href="#contact" onClick={() => setMenuOpen(false)}><ActionIcon kind="mail"/>{copy.contact}</a></nav><div className="header-actions"><button className="language-button" onClick={() => setLang(lang === 'en' ? 'fr' : 'en')} aria-label={lang === 'en' ? 'Passer en français' : 'Switch to English'}>{lang === 'en' ? 'FR' : 'EN'}</button><button className="theme-button" aria-label={theme === 'dark' ? copy.light : copy.dark} onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}><ThemeIcon dark={theme === 'dark'}/></button><a className="header-contact" href="#contact"><ActionIcon kind="mail"/>{copy.contact}</a><button className="menu-button" ref={menuRef} aria-label={menuOpen ? copy.closeMenu : copy.menu} aria-expanded={menuOpen} aria-controls="main-navigation" onClick={() => setMenuOpen(!menuOpen)}><span/><span/></button></div></div></header>
     {route.page === 'home' ? <main id="main"><ImmersiveHero lang={lang} availability={availability} duration={profile.availability.duration[lang]}/><Career lang={lang}/><About lang={lang}/><Skills lang={lang}/><Credentials lang={lang}/></main> : route.page === 'projects' ? <ProjectExplorer lang={lang} filter={route.filter}/> : project ? <ProjectDossier key={project.id} project={project} lang={lang}/> : <main className="wrap missing-page" id="main"><h1 className="page-title" tabIndex={-1}>{copy.notFound}</h1><a href={indexHref()} className="black-button">{copy.viewAll}<ActionIcon kind="collection"/></a></main>}

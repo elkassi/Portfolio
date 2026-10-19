@@ -10,7 +10,7 @@ The Pages build sets `PORTFOLIO_BASE_PATH=/Portfolio/` and `PORTFOLIO_SITE_URL=h
 
 Local development retains the root base by default. To preview a Pages build, set the same base environment variable for both build and preview. Site metadata is injected by Vite using `PORTFOLIO_SITE_URL`; root-hosted builds can override both values without a source rewrite.
 
-Google Analytics is not activated yet. The user will create the web stream after receiving the verified GitHub Pages address, then supply its public Measurement ID. Do not invent an ID or claim visitor/click/download tracking is active. QR generation and CV edits remain deferred.
+Google Analytics Measurement ID: G-96SJSJ73X8 (supplied by the user on 19 October 2026). src/analytics.ts loads the Google tag only for production on elkassi.github.io. Standard Google page views/enhanced measurement remain automatic; custom project_view, category_view, section_view, navigation_click, cv_download and contact_click events identify portfolio interactions. Custom route events are deduplicated; no manual page_view is sent, avoiding duplicate automatic pageviews. CV tracking measures link clicks, not completed saves. Search text and email addresses are not included in custom payloads. Advertising personalization and Google Signals are disabled. Country reporting is provided by GA, not a separate geolocation service. Ad blockers can prevent measurement. QR generation and CV edits remain deferred.
 
 Pre-migration checkpoint: local tag `before-github-pages-2026-10-19` at `9198488`. Verify the first Actions deployment and actual public assets before reporting the migration as complete.
 
@@ -29,3 +29,4 @@ After approved changes, run `pnpm check` and `pnpm build`. Use the Sites source 
 Representative responsive checks and remaining limits are recorded in `VERIFICATION.md`. Continue to test the actual deployed site on phones before final CV delivery. The user's large monitor is 2560 × 1440; browser zoom and usable CSS viewport also affect the layout.
 
 The latest user instruction is to finish the website and deployment before creating a QR code or editing the CV. The supplied CV is unchanged. When that later step is requested, use the final stable address; regular website updates at the same address do not require a different QR code. If a custom domain is selected, establish it before printing the final CV.
+

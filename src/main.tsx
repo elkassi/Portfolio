@@ -7,6 +7,7 @@ import '@fontsource/dm-sans/latin-700.css';
 import '@fontsource/ibm-plex-mono/latin-400.css';
 import '@fontsource/barlow-condensed/latin-600.css';
 import App from './App';
+import { initializeAnalytics } from './analytics';
 import './styles.css';
 import './motion.css';
 import './engineering.css';
@@ -18,4 +19,5 @@ import './contact.css';
 import './home-refinements.css';
 import './navigation.css';
 
+initializeAnalytics();
 ReactDOM.createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>);

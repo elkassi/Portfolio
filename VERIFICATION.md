@@ -219,3 +219,9 @@ No public deployment was performed.
 - Live home, opening project link, Atlas, Lear dossier and AI Fundamentals modal verified in Chrome. Main JS/CSS/favicon returned HTTP 200. CV, WSE proof PDF and AI certificate preview returned HTTP 200 and SHA-256 matched the originals.
 - Live screenshot saved outside source checkout: ../github-pages-live.png. No analytics collection is enabled yet.
 
+
+## Google Analytics integration — 19 October 2026
+- TypeScript check and GitHub-base production build passed.
+- Isolated runtime checks passed for single tag initialization, route-event deduplication, project/category/CV/contact/navigation events, exclusion of email from custom payloads, and localhost exclusion.
+- Public deployment/Google receipt verification follows publication; do not equate build success with data appearing in Analytics.
+
